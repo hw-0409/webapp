@@ -1,3 +1,5 @@
-div {
-    background: red;
-}
+@import "./core/reset.scss";
+@import "./modules/AppMain";
+@import "./modules/AppHeader";
+@import "./modules/AppFooter";
+@import "./modules/common";

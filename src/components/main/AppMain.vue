@@ -1,7 +1,7 @@
 <template>
   <div class="app-main">
     app-main
-      <div class="div">孟先生</div>
+    
   </div>
 </template>
 
