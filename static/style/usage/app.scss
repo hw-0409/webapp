@@ -1,3 +1,6 @@
-div {
-    background: red;
+@import './core/reset.scss';
+@import './modules/app-my.scss';
+@import './modules/app-my-info.scss';
+#app {
+    height: 100%;
 }
