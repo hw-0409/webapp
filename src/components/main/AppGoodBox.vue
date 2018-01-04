@@ -12,7 +12,7 @@
                         <img  :src="good.app_mimg" alt="">
                     </div>
                     <h5>{{good.name}}</h5>
-                    <p>精选</p><span class="youhui">{{good.pm_desc}}</span>
+                    <p v-show="good.is_xf==1">精选</p><span class="youhui">{{good.pm_desc}}</span>
                   
                     <div class="product-info">
                         <span>{{good.specifics}}</span>
