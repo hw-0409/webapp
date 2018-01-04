@@ -1,0 +1,96 @@
+.app-my-store {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        position: fixed;
+        width: 100%;
+        height: 0.55rem;
+        background: #f9fafd;
+        @include border(0 0 1px 0, #e0e0e0, solid);
+        @include flexbox();
+        a {
+            height: 0.55rem;
+            width: .72rem;
+            font-size: .28rem;
+            color: #999;
+            padding-left: .1rem;
+            line-height: .55rem;
+        }
+        .myStore {
+            width: 2.3rem;
+            height: 100%;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #333;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .redact {
+            color: #777;
+            text-align: center;
+            line-height: 0.55rem;
+            width: 0.55rem;
+            font-size: 16px;
+        }
+    }
+    section {
+        @include flex();
+        width: 100%;
+        padding-top: 0.15rem;
+        .content {
+            @include border(0 0 1px 0);
+            border-color: #e0e0e0;
+            height: 0.96rem;
+            width: 100%;
+            background: #fff;
+            padding-left: 0.2rem;
+            padding-top: 0.09rem;
+            position: relative;
+            h4 {
+                font-size: 16px;
+                line-height: 0.33rem;
+                font-weight: 200;
+            }
+            p {
+                color: #999;
+                line-height: 0.2rem;
+            }
+            .remove {
+                height: 0.96rem;
+                width: 0.96rem;
+                text-align: center;
+                line-height: 0.96rem;
+                background: red;
+                color: #fff;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    footer {
+        height: 0.6rem;
+        width: 100%;
+        background: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        .foot {
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items (center);
+            height: 100%;
+            width: 100%;
+            .addStore {
+                height: 0.45rem;
+                width: 2.25rem;
+                color: #000;
+                background-color: #ffd600;
+                border-radius: .06rem;
+                text-align: center;
+                line-height: 0.45rem;
+            }
+        }
+    }
+}

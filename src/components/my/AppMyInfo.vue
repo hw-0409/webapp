@@ -72,7 +72,7 @@
  
 <script>
 export default {
-  name: 'app-my',
+  name: 'app-my-info',
   data () {
     return {
         vpiGeade:[

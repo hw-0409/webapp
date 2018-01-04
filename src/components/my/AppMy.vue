@@ -22,49 +22,54 @@
       </div>
       <section class="my-content">
         <div class="content-order">
-            <div class="my-spline">
+            <router-link class="my-spline" :to='{name:"my-order",params:{id:"all"}}' tag="div" >
                 <h5>我的订单</h5>
                 <h6>查看全部订单</h6>
-            </div>
+            </router-link>
             <div class="order-types">
               <ul>
-                <li>待付款</li>
-                <li>待收货</li>
-                <li>待评价</li>
-                <li>退款/售后</li>
+            <router-link  :to='{name:"my-order",params:{id:order.id}}' tag="li" v-for="order in orders" :key="order.id" >{{order.content}}</router-link>       
+                
               </ul>
             </div>
         </div>
         <div class="content-items">
           <ul>
-            <li>积分商城</li>
-            <li>优惠券</li>
-            <li>收货地址</li>
-            <li>客服/反馈</li>
-            <li>关于我们</li>
+            <router-link  :to='{name:"my-block",params:{id:block.id}}' tag="li" v-for="block in blocks" :key="block.id" >{{block.con}}</router-link>       
             <div></div>
           </ul>
         </div>
-        <div class="logout">推出当前账号</div>
+        <div class="logout">退出当前账号</div>
       </section>
       <footer>
-
+          
       </footer>
   </div>
 </template>
 
 <script>
+import axios from "axios" 
 export default {
   name: 'app-my',
   data () {
     return {
-
+      arr :[],
+      orders:[
+        {id:"par",content:"待付款"},
+        {id:"put",content:"待收货"},
+        {id:"eva",content:"待评价"},
+        {id:"ref",content:"退款/售后"}
+        ],
+      blocks:[
+        {id:1,con:"积分商城"},
+        {id:2,con:"优惠券"},
+        {id:3,con:"收货地址"},
+        {id:4,con:"客服/反馈"},
+        {id:5,con:"关于我们"},
+      ]
     }
   },
-  methods: {
-    info(){
-      name:''
-    }
+  mounted () {
   }
 }
 </script>

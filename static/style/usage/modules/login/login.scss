@@ -1,0 +1,95 @@
+.my-login {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        position: fixed;
+        width: 100%;
+        height: 0.55rem;
+        background: #f9fafd;
+        @include border(0 0 1px 0, #e0e0e0, solid);
+        @include flexbox();
+        a {
+            height: 0.55rem;
+            width: .72rem;
+            font-size: .28rem;
+            color: #999;
+            padding-left: .1rem;
+            line-height: .55rem;
+        }
+        .login {
+            position: absolute;
+            left: 0.6rem;
+            right: 0.6rem;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #333;
+            font-size: 0.16rem;
+            font-weight: 700;
+        }
+    }
+    .pic-word {
+        height: 0.83rem;
+        width: 100%;
+        background: #ffd600 url(../../../src/assets/login-img/bg.png) no-repeat 0.1rem bottom;
+        background-size: auto 85%;
+        position: relative;
+        P {
+            position: absolute;
+            right: 0;
+            top: 0.2rem;
+            width: 62%;
+            font-size: .14rem;
+            line-height: .17rem;
+            color: #000;
+        }
+    }
+    .log {
+        background: #fff;
+        .us {
+            @include border(0 0 1px 0)
+        }
+        .user {
+            padding-left: .18rem;
+            padding-top: 0.12rem;
+            padding-bottom: .12rem;
+            input {
+                width: 1.96rem;
+                border: none;
+                background-color: transparent;
+                font-size: 0.16rem;
+                vertical-align: middle;
+                outline: 0;
+            }
+            span {
+                background-color: #ffd600;
+                border: none;
+                padding: .06rem .05rem;
+                border-radius: .04rem;
+                color: #333;
+                font-size: 16px;
+            }
+        }
+    }
+    .voice {
+        text-align: center;
+        font-size: 16px;
+        margin: 0.12rem 0 0.24rem;
+        .voick-link {
+            color: #00f;
+            text-decoration: underline;
+        }
+    }
+    .buttom {
+        color: #000;
+        background-color: #ffd600;
+        border-radius: .08rem;
+        margin: 0 .08rem;
+        height: 0.5rem;
+        line-height: .5rem;
+        text-align: center;
+        font-size: 18px;
+    }
+}

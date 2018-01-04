@@ -1,0 +1,69 @@
+.app-my-order {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        position: fixed;
+        width: 100%;
+        height: 0.55rem;
+        background: #f9fafd;
+        @include border(0 0 1px 0, #e0e0e0, solid);
+        @include flexbox();
+        a {
+            height: 0.55rem;
+            width: .72rem;
+            font-size: .28rem;
+            color: #999;
+            padding-left: .1rem;
+            line-height: .55rem;
+        }
+        .myOrder {
+            flex: 1;
+            height: 100%;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #333;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .redact {
+            width: .72rem;
+            height: 100%;
+            font-size: .40rem;
+            color: #999;
+            text-align: right;
+            margin-top: -8px;
+        }
+    }
+    .order {
+        display: flex;
+        height: 0.5rem;
+        background: #fff;
+        line-height: 0.5rem;
+        color: #333;
+        border: 1px solid #e0e0e0;
+        .or {
+            width: 20%;
+            text-align: center;
+            font-size: 13px;
+            position: relative;
+        }
+        .activer {
+            &:after {
+                position: absolute;
+                display: block;
+                width: 80%;
+                height: 0;
+                border-bottom: 2px solid;
+                bottom: 0;
+                left: 10%;
+                content: '';
+                border-color: #ff3800;
+            }
+        }
+    }
+    section {
+        @include flex();
+        width: 100%;
+    }
+}
