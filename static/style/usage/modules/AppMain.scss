@@ -1,6 +1,9 @@
-.app-box{
+
+//轮播图
+
+.app-main{
     padding-top:.55rem; 
-    overflow:scroll;
+    padding-bottom: .57rem;
 }
 .swiper-pagination-bullet{
  background-color: #ffffff;
@@ -13,3 +16,207 @@
     text-align: end;
     padding-right: .1rem;
 }
+//导航
+
+.app-index-nav{
+    
+    .goods-box{
+        padding: 3%;
+        margin: .05rem 0 .12rem 0;
+        background: #fff;
+        @include flexbox();
+         @include justify-content(space-around);
+         li{
+             width: 25%;
+             text-align: center;
+               img{
+                width: 100%;
+               }
+         }
+       
+    }
+        //列表导航
+    .goods-nav{
+        width: 100%;
+       overflow: hidden;
+       margin-bottom:.12rem; 
+        li{
+                float: left;
+                width: 33.3333%;
+                border-right:transparent 1px solid;
+            img{
+                //height: 1.08rem;
+                width:100%;
+            }
+        }
+    }
+    //.
+    .home-business{
+        width: 100%;
+        background: #fff;
+            .sscs{
+                 width: 100%;
+                img{
+                    width: 100%;
+                    height:.56rem ;
+                }
+            }
+            .business-sub{
+                 padding: 0 .1rem;
+                 @include flexbox();
+                @include justify-content(space-between);
+                img{
+                    height: .67rem;
+                    width:48%;
+                }
+            }
+            .shyp{
+                @include flexbox();
+                @include justify-content(space-around);
+                li{
+                    margin: .12rem 0;
+                    text-align: center;
+                    img{
+                        width: 100%;
+                    }
+                    p{
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                    }
+                }
+            }
+            .busub{
+                margin-top: .05rem;
+                 width: 100%;
+                .busub-ul{
+                    width: 100%;
+                    overflow: hidden;
+                    li{
+                        float: left;
+                        width:50%;
+                        border-top: 1px solid #e0e0e0;
+                        border-right:1px solid #e0e0e0;
+                        img{
+                          width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+       
+}
+//goods-LargeBox
+.app-good-large{
+        margin-top:.12rem;
+       
+        ul{
+            li{
+                margin-bottom: .12rem;
+                 background: #fff;
+                .good-item{
+                    height: .48rem;
+                   overflow: hidden;
+                    .item-title{
+                             float: left;
+                             line-height: .15rem;
+                            font-size: 16px;
+                            padding: .02rem 0 0 .06rem;
+                            margin: .15rem 0 0 3%;
+                            border-left:.1rem solid;
+                            font-weight: 700;
+                            //color: red;
+                    }
+                        i{
+                            line-height: .48rem;
+                            float: right;
+                            margin-right: 3%;
+                            color: #999;
+                        }
+                }
+                    .img-f-box{
+                        width: 100%;
+                        padding: 0 .1rem;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .product{
+                        //padding-bottom: .12rem;
+                        width: 100%;
+                         @include flexbox();
+                        @include justify-content(space-around);
+                        .product-box{
+                            margin-top:.12rem; 
+                            font-size: 14px;
+                            position: relative;
+                            border-right: 1px solid #eee;
+                            padding:0 .05rem;
+                            width: 33%;
+                            .product-img{
+                                img{
+                                     width: 1.1rem;
+                                     height: 1.1rem;
+                                }
+                              
+                            }
+                            h5{
+                                font-weight: 100;
+                                @include wrap();
+                                @include ellipsis();
+                            }
+                            p{
+                                     margin: .01rem 0;
+                                    font-size: 12px;
+                                    padding: 0 .02rem;
+                                    border: 1px solid red;
+                                    display: inline-block;
+                                    color: red;
+                                    border-radius:.05rem; 
+                            }
+                                .youhui{
+                                    margin-left: .1rem;
+                                      border-radius:.05rem; 
+                                      color:#fff;
+                                      font-size: .13rem;
+                                      background: red;
+                                    text-align: center;
+                                }
+                            .product-info{
+                                color: #999;
+                             i{
+                                 color: #f40;
+                             }
+                               b{
+                                   font-weight: 100;
+                                   text-decoration: line-through;
+                               }
+                                span{
+                                    width: 100%;
+                                    display: inline-block;
+                                   margin: .03rem 0; 
+                                }
+                            }
+                            em{
+                                position: absolute;
+                                width: .33rem;
+                                height: .33rem;
+                                text-align: center;
+                                line-height: .33rem;
+                                box-shadow: 1px 1px 5px #888888;
+                                bottom: .02rem;
+                                right: .05rem;
+                                border:1px solid #e0e0e0;
+                                color: #ff4300;
+                                font-size: .26rem;
+                                border-radius: 50%;
+                                z-index: 100;
+                                
+                            }
+                        }
+                    }
+            }
+        }
+  
+}
+

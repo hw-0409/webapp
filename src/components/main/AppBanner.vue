@@ -24,20 +24,13 @@ export default {
   methods:{
       getInfo(){
           let that = this
-        //http://m.beequick.cn/data/home
-        //?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=
-        // http://127.0.0.1:3000/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=
          axios.get("/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=")
           .then((response)=>{
               var jsonObj =  (new Function("return" + response.data))()
-              console.log(jsonObj)
-            // console.log(eval('('+response.data+')'))
-            //  var arr = eval('('+response.data+')')
+             // console.log(jsonObj)
              that.mock = jsonObj.data.act_info[0].act_rows
-            //  console.log(typeof response)
-            // that.mock.push(response.data)
-            
-            console.log(that.mock)
+          
+           // console.log(that.mock)
           })
       }
   },
@@ -46,7 +39,9 @@ export default {
   },
    updated(){
             new swiper('.app-banner',
-            {autoplay:{delay:2000},
+        
+            {    loop:true,
+                autoplay:{delay:2000},
             pagination: {
                 el: '.swiper-pagination',
             }

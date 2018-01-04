@@ -1,32 +1,24 @@
 <template>
   <div class="app-footer">
         <ul>
-            <router-link to="/main" tag="li" class=" home1 home"  >
-                
-                <i>首页</i>
-            </router-link>
-            <router-link to="/list" tag="li" class="home2 home">
-                
-                <i>闪送超市</i>
-            </router-link>
-            <router-link to="/shop" tag="li" class="home3 home">
-                
-                <i>购物车</i>
-            </router-link>
-            <router-link to="/my" tag="li" class="home4 home">
-                
-                <i>我的</i>
-            </router-link>
-         
+        <router-link tag="li" v-for="item in nav" :to="{name:item.name}" :key="item.id"  class="home" :class= "item.class"  >
+                        <i>{{item.contant}}</i>
+        </router-link>
         </ul>
   </div>
 </template>
 <script>
 export default {
   name:"app-footer",
-  data:function(){
+  data(){
         return {
-            isShow:false
+            isShow:false,
+            nav:[
+                {id:1,contant:'首页',name:'main',class:'home1'},
+                {id:2,contant:'闪送超市',name:'list',class:'home2'},
+                {id:3,contant:'购物车',name:'shop',class:'home3'},
+                {id:4,contant:'我的',name:'my',class:'home4'}
+            ]
         }
   }
 }
