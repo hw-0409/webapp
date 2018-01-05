@@ -78,6 +78,7 @@
         overflow-x: hidden;
         overflow-y: auto;
         padding-top: 0.12rem;
+        padding-bottom: 0.57rem;
         .content-order {
             background: #fff;
             .my-spline {
@@ -182,10 +183,5 @@
             text-align: center;
             margin: 0.36rem 0 0.12rem;
         }
-    }
-    footer {
-        height: 0.57rem;
-        background: red;
-        width: 100%;
     }
 }

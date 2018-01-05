@@ -41,16 +41,16 @@
         </div>
         <div class="logout">退出当前账号</div>
       </section>
-      <footer>
-          
-      </footer>
+<app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import AppFooter from "../App-Footer/AppFooter"
 import axios from "axios" 
 export default {
   name: 'app-my',
+    components:{AppFooter},
   data () {
     return {
       arr :[],
