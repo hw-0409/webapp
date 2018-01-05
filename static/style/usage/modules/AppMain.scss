@@ -1,6 +1,5 @@
 
 //轮播图
-
 .app-main{
     padding-top:.55rem; 
     padding-bottom: .57rem;
@@ -37,6 +36,7 @@
     }
         //列表导航
     .goods-nav{
+         background: #fff;
         width: 100%;
        overflow: hidden;
        margin-bottom:.12rem; 
@@ -71,6 +71,7 @@
                 }
             }
             .shyp{
+               
                 @include flexbox();
                 @include justify-content(space-around);
                 li{
