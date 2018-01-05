@@ -17,86 +17,6 @@
 			</div>	
 		</div>
 		
-		<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<h2>海南青柠檬</h2>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>
-		<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<h2>海南青柠檬</h2>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>
-		<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<h2>海南青柠檬</h2>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>
-		<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<h2>海南青柠檬</h2>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>
-		<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<h2>海南青柠檬</h2>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>
 	</div>
 	
 	
@@ -119,7 +39,9 @@
 	.app-list-item{
 		/*height:100%;*/
 		overflow: scroll;
+		height:1rem;
 		.list-box{
+			
 			display: flex;
 			padding:0.1rem;
 			font-size: 12px;
