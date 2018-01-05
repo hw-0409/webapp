@@ -10,3 +10,8 @@
 #app {
     height: 100%;
 }
+
+@import "./modules/AppMain";
+@import "./modules/AppHeader";
+@import "./modules/AppFooter";
+@import "./modules/common";

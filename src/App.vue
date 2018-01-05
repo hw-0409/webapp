@@ -1,15 +1,26 @@
 <template>
   <div id="app">
+      <app-footer></app-footer>
      <router-view></router-view>
   </div>
 </template>
 
 <script>
+
+import AppFooter from "./components/App-Footer/AppFooter"
 export default {
-  name: 'app'
+  name: 'app',
+
+  components:{
+    AppFooter
+  }
 }
 </script>
 
 <style>
+#app{
+  width: 100%;
+  height: 100%;
+}
 
 </style>
