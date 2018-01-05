@@ -1,0 +1,25 @@
+@import "./fragment/yo-modal";
+@import "./element/yo-loading";
+
+html,body,#app{
+    height: 100%;
+    margin: 0;padding: 0;
+}
+
+*{box-sizing: border-box;}
+
+.app-list{
+    @include flexbox();
+    @include flex-direction(column);
+    height: 100%;
+    header{
+        height:0.55rem;
+        background: #ffd600;
+    }
+
+    footer{
+        height:0.6rem;
+        background: #999;
+        
+    }
+} 
