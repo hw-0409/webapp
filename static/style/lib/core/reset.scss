@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "function";
 @import "classes";
+
 /**
  * Yo框架全局Reset
  * Yo重置Mobile及高级浏览器上常见的差异
@@ -19,13 +20,13 @@
 // 2. 默认铺满屏幕高度
 html,
 body {
-    overflow: hidden;
+    overflow: auto;
     height: 100%;
 }
 
 // 1. 隐藏页面滚动条
 ::-webkit-scrollbar {
-    @if map-get($setting, is-scrollbar) == false {
+    @if map-get($setting, is-scrollbar)==false {
         display: none;
     }
 }
@@ -36,15 +37,16 @@ html {
     background-color: map-get($base, doc-bgcolor);
     color: map-get($base, color);
     // 定义root字号，作为rem计算基准
-    @if map-get($base, responsive-type) == scaling {
+    @if map-get($base, responsive-type)==scaling {
         // 如果是跟随屏幕大小而变的场景，使用 vw
         font-size: map-get($base, font-size-root-scaling);
-    } @else {
+    }
+    @else {
         // 如果是常规场景，使用 px
         font-size: map-get($base, font-size-root);
     }
     // 是否允许横竖屏时字号调整
-    @if map-get($setting, is-text-size-adjust) == false {
+    @if map-get($setting, is-text-size-adjust)==false {
         // 如果为flase，则不允许自动调整
         -webkit-text-size-adjust: 100%;
     }
@@ -269,7 +271,7 @@ a {
 }
 
 // 1. fix Android Browser 4.2.* 及以下 input:checked ~ .xxx 失效的问题
-html + input {}
+html+input {}
 
 // 1. 预设清除浮动
 .g-clear,

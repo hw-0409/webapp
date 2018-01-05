@@ -1,0 +1,187 @@
+.app-my {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    .my-header {
+        height: 1.2rem;
+        background: #ffd600;
+        dl {
+            padding-top: 0.24rem;
+            padding-left: 0.18rem;
+            @include flexbox();
+            dt {
+                height: .72rem;
+                width: .72rem;
+                background: url(../../../src/assets/app-my-image/my.png) no-repeat;
+                background-size: 100%;
+            }
+            dd {
+                width: 73%;
+                padding-left: 0.18rem;
+                background: url(../../../src/assets/app-my-image/you-bai.png) no-repeat;
+                background-position: right;
+                background-size: 0.13rem 0.22rem;
+                h3 {
+                    line-height: 1;
+                    margin: .08rem 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #fff;
+                }
+                h4 {
+                    width: 1.10rem;
+                    color: #e64f1a;
+                    background: url(../../../src/assets/app-my-image/feng.png) no-repeat;
+                    background-size: auto 100%;
+                    padding-left: .36rem;
+                    line-height: 0.36rem;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .my-item {
+        height: 0.42rem;
+        background: #f3c800;
+        @include flexbox();
+        @include align-items(center);
+        color: #fff;
+        .item {
+            width: 49.9%;
+            height: 100%;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+        }
+        .inner {
+            width: 0.92rem;
+            height: 0.24rem;
+            padding-left: 0.36rem;
+            background-size: 0.24rem;
+            background-repeat: no-repeat;
+        }
+        .goods .inner {
+            background-image: url(../../../src/assets/app-my-image/shan.png);
+        }
+        .shops .inner {
+            background-image: url(../../../src/assets/app-my-image/dian.png);
+        }
+        .split {
+            width: 1px;
+            height: 70%;
+            background: #fff;
+        }
+    }
+    .my-content {
+        @include flex();
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-top: 0.12rem;
+        padding-bottom: 0.57rem;
+        .content-order {
+            background: #fff;
+            .my-spline {
+                background-image: url(../../../src/assets/app-my-image/you.png);
+                background-repeat: no-repeat;
+                background-size: 0.22rem 0.14rem;
+                background-position: right;
+                height: 0.5859rem;
+                line-height: 0.24rem;
+                padding: 0.168rem 0.3rem 0.168rem 0.18rem;
+                border-bottom: 0.01rem #e0e0e0 solid;
+                @include flexbox();
+                @include justify-content(space-between);
+                font-size: 0.16rem;
+                h5 {
+                    color: #333;
+                    font-weight: 100;
+                }
+                h6 {
+                    color: #999;
+                    font-weight: 100;
+                }
+            }
+            .order-types {
+                ul {
+                    height: 0.84rem;
+                    @include flexbox();
+                    li {
+                        height: 100%;
+                        text-align: center;
+                        width: 25%;
+                        font-size: 0.14rem;
+                        line-height: 0.36rem;
+                        padding-top: 0.48rem;
+                        background-repeat: no-repeat;
+                        background-size: auto 25%;
+                        background-position: center 40%;
+                        &:nth-of-type(1) {
+                            background-image: url(../../../src/assets/app-my-image/fu.png);
+                        }
+                        &:nth-of-type(2) {
+                            background-image: url(../../../src/assets/app-my-image/shou.png);
+                        }
+                        &:nth-of-type(3) {
+                            background-image: url(../../../src/assets/app-my-image/ping.png);
+                        }
+                        &:nth-of-type(4) {
+                            background-image: url(../../../src/assets/app-my-image/tui.png);
+                        }
+                    }
+                }
+            }
+        }
+        .content-items {
+            height: 2.42rem;
+            width: 100%;
+            margin: 0.12rem 0;
+            background: #fff;
+            ul {
+                position: relative;
+                @include flexbox();
+                @include flex-wrap(wrap);
+                li {
+                    width: 25%;
+                    height: 1.2rem;
+                    padding: 0.72rem 0 0.24rem;
+                    text-align: center;
+                    background: center 0.36rem no-repeat;
+                    background-size: 0.36rem;
+                    &:nth-of-type(1) {
+                        background-image: url(../../../src/assets/app-my-image/bao.png);
+                    }
+                    &:nth-of-type(2) {
+                        background-image: url(../../../src/assets/app-my-image/yuan.png);
+                    }
+                    &:nth-of-type(3) {
+                        background-image: url(../../../src/assets/app-my-image/map.png);
+                    }
+                    &:nth-of-type(4) {
+                        background-image: url(../../../src/assets/app-my-image/ke.png);
+                    }
+                    &:nth-of-type(5) {
+                        background-image: url(../../../src/assets/app-my-image/guan.png);
+                    }
+                }
+                div {
+                    position: absolute;
+                    height: 2px;
+                    width: 1000%;
+                    background: grey;
+                    top: 50%;
+                    left: 0;
+                    transform: scale(0.1);
+                    transform-origin: left;
+                }
+            }
+        }
+        .logout {
+            background-color: #fff;
+            height: 0.54rem;
+            line-height: 0.54rem;
+            text-align: center;
+            margin: 0.36rem 0 0.12rem;
+        }
+    }
+}

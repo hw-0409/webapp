@@ -1,18 +1,28 @@
 <template>
   <div class="app-main">
-    app-main
-      <div class="div">孟先生</div>
+    <app-header></app-header>
+       <AppBanner></AppBanner> 
+       <AppIndexNav></AppIndexNav>
+       <AppGoodBox></AppGoodBox>
+     <router-view></router-view>
+<app-footer></app-footer>
   </div>
 </template>
 
 <script>
+
+
+import AppHeader from "../App-Header/AppHeader"
+import AppFooter from "../App-Footer/AppFooter"
+import AppBanner from "./AppBanner"
+import AppIndexNav from "./AppIndexNav"
+import AppGoodBox from "./AppGoodBox"
 export default {
   name: 'app-main',
-  data () {
-    return {
-     
-    }
+  components:{
+    AppHeader,AppBanner,AppIndexNav,AppGoodBox,AppFooter
   }
+ 
 }
 </script>
 

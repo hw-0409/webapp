@@ -1,0 +1,43 @@
+
+@import '../../style/lib/ani/elastic-in.scss';
+.app-footer{
+    position: fixed;
+    bottom: 0;
+    height: .57rem;
+ width: 100%;   
+ z-index: 500;
+     background-color: rgba(246,246,246,.95);
+    ul{
+        width: 100%;
+        height: 100%;
+        @include flexbox();
+        @include justify-content(space-around);
+        @include  align-items(center);
+        li{
+            width: 25%;
+            text-align: center;
+            height: 100%;
+            @include flexbox();
+            @include flex-direction(column); 
+        }
+         .home1{
+                background: url(../../app-footer/1.png) no-repeat center .08rem;
+        }
+            .home2{
+                background: url(../../app-footer/2.png) no-repeat center .08rem;
+        }
+            .home3{
+                background: url(../../app-footer/3.png) no-repeat center .08rem;   
+        }
+            .home4{
+                background: url(../../app-footer/4.png) no-repeat center .08rem;     
+        }
+        .home{           
+                 font-size: .14rem;
+                    color: #777;
+                    text-align: center;
+                   background-size: auto .25rem; 
+                    padding-top: .35rem;
+            }
+    }
+}
