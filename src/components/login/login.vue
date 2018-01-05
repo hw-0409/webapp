@@ -28,7 +28,7 @@ export default {
       }
   },
   methods: {
-      verUser(){
+      verUser(){//验证手机号
         var pattern = /^(13|14|15|17|18|19)[0-9]{9}$/;
         if(this.user.length === 0){
             alert("请输入手机号")
@@ -41,7 +41,7 @@ export default {
         }
         
       },
-      getCode(){
+      getCode(){//验证码
           let str = 'qwertyuiopasdfghjklzxcvbnmWERTYUIOPASDFGHJKLZXCVBNM1234567890'
           let newStr = ''
           for(let i = 0; i < 4;i++){
@@ -50,17 +50,21 @@ export default {
           return newStr
       },
       submit(){
-          if(this.code.toUpperCase === this.newCode.toUpperCase){
-              localStorage.user = "手机号:" + this.user
+          if(this.user){//是否输入手机号
+            if(this.code){//是否输入验证码
+                if(this.code.toUpperCase() == this.newCode.toUpperCase()){
+                    localStorage.axfInfo =  this.user
+                    this.$router.push({path:'/main'})
+                }else{
+                    alert("验证码不正确")
+                }
+            }else{
+                alert("请输入验证码")
+            }
           }else{
-              alert("验证码不正确")
+               alert("请输入手机号")
           }
       }
-  },
-  created () {
-      
-  },
-  updated () {
   }
 }
 </script>

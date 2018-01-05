@@ -56,7 +56,6 @@ export default {
          axios.get("/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=")
           .then((response)=>{
               var jsonObj =  (new Function("return" + response.data))()
-              console.log(jsonObj)
              that.mock = jsonObj.data.act_info[1].act_rows
              that.GoodsNav = jsonObj.data.act_info[3].act_rows
            // console.log(that.mock.act_info[1].act_rows) 

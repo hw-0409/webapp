@@ -1,11 +1,15 @@
 <template>
-  <div class="order-all">
-
-  </div>
+  <div class="site">site</div>
 </template>
 <script>
 export default {
-  name:"order-all"
+  name:"site",
+  data () {
+      return {
+          
+      }
+  }
+
 }
 </script>
 <style lang="scss" scoped>

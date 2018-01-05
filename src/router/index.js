@@ -14,7 +14,7 @@ import AppMyStore from "../components/my/AppMyStore.vue";
 import AppMyAddStore from "../components/my/AppMyAddStore.vue";
 import AppMyOrder from "../components/my/order/AppMyOrder.vue";
 import AppMyBlock from "../components/my/block/block.vue";
-import AppLogin from "../components/login/login.vue";
+import AppMyLogin from "../components/login/login.vue";
 
 const routes = [
     { path: "", redirect: "main" },
@@ -29,7 +29,8 @@ const routes = [
     { path: "/my-add-store", name: "my-add-store", component: AppMyAddStore },
     { path: "/my-order/:id", name: "my-order", component: AppMyOrder, },
     { path: "/my-block/:id", name: "my-block", component: AppMyBlock, },
-    { path: "/my-login", name: "my-login", component: AppLogin, },
+    { path: "/my-login", name: "my-login", component: AppMyLogin, },
+
 
     { path: "**", redirect: "main" }
 ]
