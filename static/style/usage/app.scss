@@ -1,4 +1,16 @@
-@import "./core/reset.scss";
+@import './core/reset.scss';
+@import './modules/app-my/my.scss';
+@import './modules/app-my/info.scss';
+@import './modules/app-my/shop.scss';
+@import './modules/app-my/store.scss';
+@import './modules/app-my/addStore.scss';
+@import './modules/app-my/order/myOrder.scss';
+@import './modules/app-my/block/block.scss';
+@import './modules/login/login.scss';
+#app {
+    height: 100%;
+}
+
 @import "./modules/AppMain";
 @import "./modules/AppHeader";
 @import "./modules/AppFooter";

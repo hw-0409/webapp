@@ -11,12 +11,11 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-        "/axf":{
-            target:"http://m.beequick.cn",
-            changeOrigin: true,
-            pathRewrite:{'^/axf':''},
-        }
-
+            '/axf': {
+                target: "http://m.beequick.cn",
+                pathRewrite: { '^/axf': '' },
+                changeOrigin: true
+            },
         },
 
         // Various Dev Server settings

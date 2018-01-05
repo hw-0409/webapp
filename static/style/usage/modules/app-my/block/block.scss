@@ -1,0 +1,38 @@
+.my-block {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        position: fixed;
+        width: 100%;
+        height: 0.55rem;
+        background: #f9fafd;
+        @include border(0 0 1px 0, #e0e0e0, solid);
+        @include flexbox();
+        a {
+            height: 0.55rem;
+            width: .72rem;
+            font-size: .28rem;
+            color: #999;
+            padding-left: .1rem;
+            line-height: .55rem;
+        }
+        .block {
+            flex: 1;
+            height: 100%;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #333;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .redact {
+            width: 0.8rem;
+            font-size: 0.16rem;
+            color: #777;
+            text-align: right;
+            line-height: .55rem;
+            padding-right: 10px;
+        }
+    }
+}

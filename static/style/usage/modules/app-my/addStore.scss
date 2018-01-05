@@ -1,0 +1,108 @@
+.app-my-add-store {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        position: fixed;
+        width: 100%;
+        height: 0.55rem;
+        background: #f9fafd;
+        @include border(0 0 1px 0, #e0e0e0, solid);
+        @include flexbox();
+        a {
+            height: 0.55rem;
+            width: .72rem;
+            font-size: .28rem;
+            color: #999;
+            padding-left: .1rem;
+            line-height: .55rem;
+        }
+        .myAddStore {
+            flex: 1;
+            height: 100%;
+            text-align: center;
+            line-height: 0.5rem;
+            color: #333;
+            font-size: 16px;
+            font-weight: 900;
+        }
+        .redact {
+            color: #777;
+            text-align: center;
+            width: 0.55rem;
+            font-size: 16px;
+            text-align: right;
+            padding-right: 5px;
+            i {
+                font-size: 0.22rem;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
+    }
+    section {
+        .site {
+            @include flexbox();
+            height: 0.42rem;
+            background: #fff;
+            line-height: 0.42rem;
+            text-align: center;
+            margin: 0.12rem 0;
+            p {
+                width: 90%;
+                font-size: 16px;
+            }
+            i {
+                margin: auto
+            }
+        }
+        .p {
+            text-indent: 1.5em;
+            font-size: 14px;
+            color: #999;
+        }
+        .newarby-shore {
+            margin: 0.12rem 0;
+            background: #fff;
+            .supermarket {
+                @include flexbox();
+                @include justify-content(space-between);
+                @include border(0 0 1px 0);
+                padding: 14px;
+                .sup-con {
+                    .sup-name {
+                        line-height: 0.33rem;
+                        font-size: 17px;
+                        color: #333;
+                    }
+                    .sup-time {
+                        color: #999;
+                        line-height: 0.19rem;
+                    }
+                    .sup-site {
+                        line-height: 0.19rem;
+                        color: #999;
+                    }
+                }
+                .sup-option {
+                    @include flexbox();
+                    @include flex-direction(column);
+                    @include justify-content(space-around);
+                    .sup-dist {
+                        text-align: center;
+                    }
+                    .sup-fav {
+                        height: 0.32rem;
+                        width: 0.77rem;
+                        background: #ffd500;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        text-align: center;
+                        line-height: 0.32rem;
+                    }
+                }
+            }
+        }
+    }
+}
