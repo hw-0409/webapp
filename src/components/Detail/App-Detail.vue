@@ -10,8 +10,8 @@
         </div>
 
         <div class="app-details-con">
-            <div v-html="goods">
-            </div>
+         
+                <AppDateilContant :goods="goods"></AppDateilContant> 
         </div>
 
          <div class="app-detail-foot">
@@ -24,10 +24,14 @@
 </template>
 
 <script>
+import AppDateilContant from './App-Dateil-Contant'
 import Bus from '../../modules/bus'
 import axios from 'axios'
 export default {
     name:'app-deteil',
+    components:{
+        AppDateilContant
+    },
     data(){
         return{
             goods:[],
@@ -49,6 +53,7 @@ export default {
     },
     created(){
         this.getGoods()
+      console.log(11111)
     },
     updated(){
        var banner = document.getElementById("bannerContainer")
@@ -59,6 +64,7 @@ export default {
         banner.style.width = 100 + '%'
        banner.style.height = 100 + '%'
        var img = document.createElement('img')
+       img.alt = '图片不见了...'
        img.style.width = 100 + '%'
        img.style.height = 100 + '%'
         //console.log(this.$route.params.img)
