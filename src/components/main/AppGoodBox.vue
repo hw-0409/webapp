@@ -7,10 +7,11 @@
                  <img :src="item.activity.img" alt="">
             </div>
             <ul class="product">
-                <li v-for="good in item.category_detail.goods" :key="good.id" class="product-box">
-                    <div class="product-img">
-                        <img  :src="good.app_mimg" alt="">
-                    </div>
+                <li  v-for="good in item.category_detail.goods" :key="good.id" class="product-box">
+                    <router-link :to="{name:'detail',params:{id:good.id,img:good.pre_imgs}}" class="product-img">
+                        <img  :src="good.img" :title="good.title" :alt="good.name">
+                       
+                    </router-link>
                     <h5>{{good.name}}</h5>
                     <p v-show="good.is_xf==1">精选</p><span class="youhui">{{good.pm_desc}}</span>
                   
@@ -28,13 +29,14 @@
 
 
 <script>
+import Bus from '../../modules/bus'
 import axios from 'axios'
 export default {
         name:"app-good-large",
        data() {
             return {
-            mock:[]
-       
+            mock:[],
+            imgBox:[]
             }
   },
   methods:{
@@ -45,14 +47,26 @@ export default {
               var jsonObj =  (new Function("return" + response.data))()
              // console.log(jsonObj)
              that.mock = jsonObj.data.act_info[5].act_rows
+             //console.log(that.mock[0].category_detail.goods[0].pre_imgs)
+             that.mock.forEach((item)=>{
+               item.category_detail.goods.forEach((good)=>{
+                   that.imgBox = that.imgBox.concat(good.pre_imgs)
+               })
+             }) 
+              Bus.$emit('inceptMessage', this.imgBox)
+               // console.log(this.imgBox)
+             //console.log(that.imgBox)
           //.category_detail.name
-          // .data.act_info[5].act_rows["0"].activity.img
+          // .data.act_info[5].act_rows["0"]
            // console.log(that.mock)
+           //http://img01.bqstatic.com/upload/goods/201/712/1415/20171214154847_872657.jpg@500w_500h_90Q
+           //http://img01.bqstatic.com/upload/goods/201/712/1415/20171214154840_803982.jpg@200w_200h_90Q
           })
       }
   },
   mounted(){
     this.getInfo()
+    
   }
 
 }

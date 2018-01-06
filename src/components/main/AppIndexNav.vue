@@ -15,10 +15,10 @@
         <div class="sscs">
           <img src="http://img01.bqstatic.com//upload/activity/201705221117303.png@90Q.png" alt="">
         </div>
-        <div class="business-sub">
+        <router-link :to="{name:'list'}" class="business-sub">
             <img src="http://img01.bqstatic.com//upload/activity/2016092417285271.jpg@90Q.jpg" alt="">
             <img src="http://img01.bqstatic.com//upload/activity/2017030919451621.jpg@90Q.jpg" alt="">
-        </div>
+        </router-link>
         <ul class="shyp">
             <li v-for="item in business" :key="item.id">
                 <img :src="item.cicons_detail.img" alt="">
