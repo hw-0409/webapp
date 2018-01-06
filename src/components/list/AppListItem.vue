@@ -21,9 +21,9 @@
 			
 			<div class="section">
 				<slot name="p-name"></slot>
-				<p class="jing">精选</p>
+				<slot name="jing" ></slot>
 				<slot name="p-intro"></slot>
-				<p<slot name="p-price"></slot>
+				<slot name="p-price"></slot>
 			</div>
 			
 		</div>

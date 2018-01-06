@@ -2,7 +2,7 @@
     <div class="app-detail">
         <div class="details-fixed">
             <div class="app-detail-header">
-            <router-link to="/main" class="yo-ico details-left">&#xf07d;</router-link>
+            <span @click="returngo()" class="yo-ico details-left">&#xf07d;</span>
                 <div class="header-center">
                         福成牛奶
                     </div>
@@ -44,17 +44,19 @@ export default {
         getGoods(){
             let that =this
             axios.get("/axf/show/productDetail?asid=5a375a83d6ec83054&_r=0.17765971774163258&reflogid=5a4f25e9efa025878&location_hash=895f738YFTysAa1bIF1iziKG5%2BNKnJmip6bI2CB43TWEFjpAzhK8cs3h5Qbk0X74u9k7kjcMjHYDp8hXFIJx4x&from=vv&id=126061&shopId=15204&bigids=2%2C0&simulate_mobile=",{
-                params:{id:that.$route.params.id}
+                params:{id:that.$route.params.id,img:that.$route.params.img}
             }).then((res)=>{
              that.goods = res.data
             })
             
+        },
+        returngo(){
+            this.$router.go(-1)
         }
         
     },
     created(){
         this.getGoods()
-      console.log(11111)
     },
     updated(){
        var banner = document.getElementById("bannerContainer")

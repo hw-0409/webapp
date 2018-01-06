@@ -6,9 +6,11 @@
     	</div>
     	
     	<div class="list-box">
-    		<AppListItem v-for="info in infos[id]">
-	    		<div slot='p-img'><img :src="info.app_mimg"></div>
+			
+    		<AppListItem  :key="info.id" v-for="info in infos[id]">
+	    		<div @click="toDateil(info.id,info.pre_imgs)" slot='p-img'><img :src="info.app_mimg"></div>
 	    		<h4 slot="p-name" class="p-name">{{info.name}}</h4>
+				<p v-show="info.is_xf==1" slot="jing" class="jing">精选</p>
 	    		<p slot="p-intro" class="p-intro">{{info.specifics}}</p>
 	    		<p slot="p-price" class="p-price">￥{{info.price}}<span>￥{{info.market_price}}</span></p>
 	    	</AppListItem>
@@ -27,10 +29,14 @@
         props:['infos','id'],
         data(){
         	return {
-        		
+        		//.data.products[103532]["0"].pre_imgs
         	}
         },
 		methods:{
+			toDateil(id,img){
+				this.$router.push({ name: 'detail',params: { id:id,img:img }})
+			}
+
 //			getData(){
 //				let that = this
 //				let url = 'http://localhost:3000/axf/data/getCategoryProduct?asid=5a431dc2ab51d9165&_r=0.7133663006016342&reflogid=5a4dda31cd79a4889&location_hash=5971adAoynJP1PTHy7VOMO8cNY4GNxqqpeDBbWCCOW9%2B2jQ8TwwCS%2Fry37i0wvktulL7RbXB8VeeMjxWdztJFnAyPuFqURa92ru9f4CdZWRg&zchtid=14449&bigids=2%2C0'
