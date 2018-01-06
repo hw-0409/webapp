@@ -12,6 +12,7 @@
         <div class="app-details-con">
          
                 <AppDateilContant :goods="goods"></AppDateilContant> 
+
         </div>
 
          <div class="app-detail-foot">
