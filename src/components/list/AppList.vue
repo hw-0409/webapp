@@ -78,6 +78,6 @@ export default {
   }
 }
 	.mint-indicator-mask{
-		z-index: 999;
+		z-index: 999 ;
 	}
 </style>

@@ -4,7 +4,6 @@
             <div class="app-detail-header">
             <span @click="returngo()" class="yo-ico details-left">&#xf07d;</span>
                 <div class="header-center">
-                        福成牛奶
                     </div>
             </div>
         </div>
@@ -73,7 +72,6 @@ export default {
         //console.log(this.$route.params.img)
         //20171214155319_585613.jpg
         this.getImg = String(this.$route.params.img)
-        localStorage.getItem = String(this.$route.params.img)
         var str = this.getImg.substr(0,3)
         var tr = this.getImg.substr(3,3)
         var sr = this.getImg.substr(6,4)
