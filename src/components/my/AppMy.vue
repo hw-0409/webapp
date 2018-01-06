@@ -5,7 +5,7 @@
           <dl>
             <dt></dt>
             <dd>
-                <h3>15835850014</h3>
+                <h3>{{user}}</h3>
                 <h4>V0</h4>  
             </dd> 
           </dl>
@@ -39,7 +39,7 @@
             <div></div>
           </ul>
         </div>
-        <div class="logout">退出当前账号</div>
+        <div class="logout" @click="removStorage()">退出当前账号</div>
       </section>
 <app-footer></app-footer>
   </div>
@@ -47,12 +47,15 @@
 
 <script>
 import AppFooter from "../App-Footer/AppFooter"
+import {mapState,mapActions} from 'vuex'
+
 import axios from "axios" 
 export default {
   name: 'app-my',
     components:{AppFooter},
   data () {
     return {
+      user:'',
       arr :[],
       orders:[
         {id:"par",content:"待付款"},
@@ -69,7 +72,26 @@ export default {
       ]
     }
   },
+  computed: {
+     ...mapState(['info']),  
+  },
+  methods:{
+    removStorage(){
+      localStorage.removeItem('axfInfo')
+      this.$router.push({path:'/my-login'})
+    },
+    ...mapActions(['initInfo'])
+  
+  },
   mounted () {
+    this.initInfo()
+    setTimeout(()=>{
+      this.user=this.info||''
+      if(!this.info.length){
+        this.$router.push({path:'/my-login'})
+      }
+
+    },400)
   }
 }
 </script>

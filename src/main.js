@@ -9,12 +9,14 @@ import 'mint-ui/lib/style.css'
 import '../static/style/usage/app.scss';
 
 
-Vue.config.productionTip = false
 
+Vue.config.productionTip = false
+import store from './vuex/store'
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
     router,
+    store,
     template: '<App/>',
     components: { App }
 })
