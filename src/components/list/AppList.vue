@@ -24,6 +24,8 @@ export default {
     return {
     	
     }
+<<<<<<< HEAD
+=======
   },
   methods:{
       getData(){
@@ -36,7 +38,21 @@ export default {
   },
   created(){
     this.getData()
+>>>>>>> master
   }
+//methods:{
+//		getData(){
+//	   	axios.get('http://localhost:3000/axf/data/getCategoryProduct?asid=5a431dc2ab51d9165&_r=0.7133663006016342&reflogid=5a4dda31cd79a4889&location_hash=5971adAoynJP1PTHy7VOMO8cNY4GNxqqpeDBbWCCOW9%2B2jQ8TwwCS%2Fry37i0wvktulL7RbXB8VeeMjxWdztJFnAyPuFqURa92ru9f4CdZWRg&zchtid=14449&bigids=2%2C0',{
+//	   		params:{}
+//	   	}).then((response)=>{
+//	   		var res = eval('('+ response.data +')')
+//		  	console.log(res.data.products)
+//		  })
+//		}
+//	},
+//	created(){
+//		this.getData()
+//}
 }
 </script>
 <style lang="scss" scoped>
