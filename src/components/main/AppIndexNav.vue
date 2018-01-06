@@ -15,10 +15,10 @@
         <div class="sscs">
           <img src="http://img01.bqstatic.com//upload/activity/201705221117303.png@90Q.png" alt="">
         </div>
-        <div class="business-sub">
+        <router-link :to="{name:'list'}" class="business-sub">
             <img src="http://img01.bqstatic.com//upload/activity/2016092417285271.jpg@90Q.jpg" alt="">
             <img src="http://img01.bqstatic.com//upload/activity/2017030919451621.jpg@90Q.jpg" alt="">
-        </div>
+        </router-link>
         <ul class="shyp">
             <li v-for="item in business" :key="item.id">
                 <img :src="item.cicons_detail.img" alt="">
@@ -56,7 +56,7 @@ export default {
          axios.get("/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=")
           .then((response)=>{
               var jsonObj =  (new Function("return" + response.data))()
-              console.log(jsonObj)
+             // console.log(jsonObj)
              that.mock = jsonObj.data.act_info[1].act_rows
              that.GoodsNav = jsonObj.data.act_info[3].act_rows
            // console.log(that.mock.act_info[1].act_rows) 
