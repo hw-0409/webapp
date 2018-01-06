@@ -1,7 +1,7 @@
 <template>
   <div class="integral-itore">
-    <anc></anc>
-    
+    <anc :jf="jf" ></anc><!-- 头部动画 -->
+
   </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
   },
   data () {
       return {
-          
+          jf:0,
       }
   }
 

@@ -6,7 +6,7 @@
     	</div>
     	
     	<div class="list-box">
-    		<AppListItem v-for="info in infos[id]">
+    		<AppListItem v-for="info in infos[id]" :key="info.id">
 	    		<div slot='p-img'><img :src="info.app_mimg"></div>
 	    		<h4 slot="p-name" class="p-name">{{info.name}}</h4>
 	    		<p slot="p-intro" class="p-intro">{{info.specifics}}</p>
