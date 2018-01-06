@@ -19,7 +19,7 @@
         </div>
         <div class="point">
             <h6>可用积分</h6>
-            <span>0</span>
+            <span>{{jf}}</span>
     </div>
     </div>
     
@@ -27,10 +27,15 @@
 </template>
 <script>
 export default {
-  name:"anc"
+  name:"anc",
+  props:["jf"]
 }
 </script>
 <style lang="scss" scoped>
+.anc{
+    width:100%;
+    background: #fff; 
+}
 .point{
         position: absolute;
         z-index:999;
@@ -38,6 +43,15 @@ export default {
         height: 100%;
         text-align: center;
         padding-top:60px;
+        color: #999;
+        font-size: 16px;
+        font-weight: 100;
+        h6{
+            line-height: 1em;
+        }
+        span{
+            font-size: 25px;
+        }
     }
 
 
@@ -45,7 +59,7 @@ export default {
 .circleProgress_wrapper{
             width: 161px;
             height: 161px;
-            margin: 12px auto;
+            margin: 0 auto 12px;
             position: relative;
         }
 

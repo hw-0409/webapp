@@ -1,4 +1,4 @@
-<template>
+﻿<template>
 	<div class="app-list-box">
     	<div class="top">
     		<p>全部分类<i class="yo-ico">&#xf031;</i></p>
@@ -9,6 +9,7 @@
 			
     		<AppListItem  :key="info.id" v-for="info in infos[id]">
 	    		<div @click="toDateil(info.id,info.pre_imgs)" slot='p-img'><img :src="info.app_mimg"></div>
+
 	    		<h4 slot="p-name" class="p-name">{{info.name}}</h4>
 				<p v-show="info.is_xf==1" slot="jing" class="jing">精选</p>
 	    		<p slot="p-intro" class="p-intro">{{info.specifics}}</p>
