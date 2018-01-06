@@ -1,10 +1,10 @@
 <template>
 	<div class="app-list-item">
-		<div class="list-box">
+		<!--<div class="list-box">
 			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
 			
 			<div class="detail">
-				<h2>海南青柠檬</h2>
+				<slot name='name' ></slot>
 				<h3><span>精选</span><span>买一赠一</span></h3>
 				<h4>140-180g 2粒/盒</h4>
 				<h5>￥29.9<span>￥39.9</span></h5>
@@ -15,8 +15,18 @@
 				<span>1</span>
 				<div class="btn add">+</div>
 			</div>	
+		</div>-->
+		<div class="title">
+			<slot name="p-img"></slot>
+			
+			<div class="section">
+				<slot name="p-name"></slot>
+				<p class="jing">精选</p>
+				<slot name="p-intro"></slot>
+				<p<slot name="p-price"></slot>
+			</div>
+			
 		</div>
-		
 	</div>
 	
 	
@@ -36,12 +46,52 @@
 
 <style lang="scss" scoped>
 	
-	.app-list-item{
-		/*height:100%;*/
-		overflow: scroll;
-		height:1rem;
-		.list-box{
-			
+	.title{
+		height:1.1rem;
+		display: flex;
+		border-bottom: 1px solid #ccc;
+		img{
+			width:0.96rem;
+			height:0.96rem;
+		}
+		.section{
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			justify-content: space-around;
+			color: #999;
+			h4{
+				font-size: 14px;
+				color: #000;
+			}
+			.jing{
+				font-size: 12px;
+				color: red;
+				border: 1px solid red;
+				width:0.3rem;
+				border-radius: 5px;
+				text-align: center;
+			}
+			.p-price{
+				color: red;
+				span{
+					color: #999;
+				}
+			}
+		}
+	}
+
+	
+
+
+
+	/*.app-list-item{
+		height:100%;
+		
+		display: flex;
+		flex: 1;
+		.app-list-item{
+			height:1.1rem;
 			display: flex;
 			padding:0.1rem;
 			font-size: 12px;
@@ -108,6 +158,6 @@
 	            }
 	        }
 	    }
-	}
+	}*/
 	
 </style>
