@@ -35,6 +35,10 @@ export default {
 .anc{
     width:100%;
     background: #fff; 
+    padding :12px 0;
+    border: 1px  solid #eee;
+    border-left-width: 0;
+    border-right-width: 0;
 }
 .point{
         position: absolute;
@@ -59,7 +63,7 @@ export default {
 .circleProgress_wrapper{
             width: 161px;
             height: 161px;
-            margin: 0 auto 12px;
+            margin: 0 auto;
             position: relative;
         }
 
