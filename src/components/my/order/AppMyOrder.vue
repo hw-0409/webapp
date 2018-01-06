@@ -63,7 +63,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .mint-indicator-wrapper{
     width: 1.8rem;
     height: 0.6rem;

@@ -1,15 +1,23 @@
 import Vue from "vue"
 import Vuex from "vuex"
 Vue.use(Vuex)
-
+import getPosition from '../modules/getPosition'
 const state = {
     info: [],
+    address:''
 }
 
 const mutations = {
+    
     initInfo(state, info) {
         state.info = info
     },
+    //定位，获取到定位信息后，加载其他的内容
+    getPosition(state,info){
+        state.address = info.address
+    }
+	
+        
 }
 const actions = {
     initInfo({ commit }) {
@@ -18,6 +26,14 @@ const actions = {
             commit('initInfo', results)
         }, 300);
     },
+    getPosition({ commit }){
+          setTimeout(() => {
+           // console.log(getPosition)
+            	getPosition((info)=>{
+			    commit('getPosition',info)
+                 })
+         }, 2000);
+    }
 }
 
 const store = new Vuex.Store({

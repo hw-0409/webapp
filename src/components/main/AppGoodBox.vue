@@ -29,6 +29,7 @@
 
 
 <script>
+import { mapActions } from 'vuex'
 import Bus from '../../modules/bus'
 import axios from 'axios'
 export default {
@@ -62,10 +63,14 @@ export default {
            //http://img01.bqstatic.com/upload/goods/201/712/1415/20171214154847_872657.jpg@500w_500h_90Q
            //http://img01.bqstatic.com/upload/goods/201/712/1415/20171214154840_803982.jpg@200w_200h_90Q
           })
-      }
+      },
+      ...mapActions(["getPosition"])
   },
   mounted(){
+      this.getPosition()
     this.getInfo()
+
+      
     
   }
 

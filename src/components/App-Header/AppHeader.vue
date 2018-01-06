@@ -1,7 +1,7 @@
 <template>
         <div class="app-header">
-                <div class="header-left">
-                    北京科技职业技术学院
+                <div @click="getPositions()" class="header-left">
+                    {{address}}
                     </div>
                 <div class="header-right">
 
@@ -14,7 +14,22 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+import { Indicator } from 'mint-ui';
 export default {
-        name:"app-header"
+        name:"app-header",
+        methods:{
+                getPositions(){
+                        this.$router.push({name:'position'})
+ 
+                },
+                ...mapActions(['getPosition'])
+        },
+        computed:{
+                ...mapState(["address"])
+        },
+        created(){
+                this.getPosition()
+        }
 }
 </script>
