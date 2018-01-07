@@ -17,6 +17,7 @@ import AppMyBlock from "../components/my/block/block.vue";
 import AppMyLogin from "../components/login/login.vue";
 import AppDetail from "../components/Detail/App-Detail.vue";
 import AppPosition from "../components/getPosition/App-getPosition.vue";
+import AppAddress from "../components/Address/App-Address.vue";
 
 const routes = [
     { path: "", redirect: "main" },
@@ -34,6 +35,7 @@ const routes = [
     { path: "/my-block/:id", name: "my-block", component: AppMyBlock, },
     { path: "/my-login", name: "my-login", component: AppMyLogin, },
     { path:"/position", name:"position", component:AppPosition},
+    { path:"/address", name:"address", component:AppAddress},
 
     { path: "**", redirect: "main" }
 ]
