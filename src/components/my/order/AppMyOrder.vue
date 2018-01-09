@@ -46,7 +46,7 @@ export default {
                 item.isboo = true
             }
         })
-         Indicator.open({
+        Indicator.open({
             text: '加载中',
             spinnerType: 'triple-bounce',
             spinnerColor:"#f80"
@@ -55,7 +55,7 @@ export default {
             Indicator.close()
             that.isOrder=true;
         }, 300);
-        }
+    }
   },
   mounted () {
    

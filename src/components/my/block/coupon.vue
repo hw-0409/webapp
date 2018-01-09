@@ -13,16 +13,16 @@
     </div>
 
     <div class="coupon-list">
-      <div class="coupon-item">
+      <div class="coupon-item" v-for="gr in grays">
           <dl>
             <dt>
-              <div><p>￥2</p></div>
+              <div><p>￥{{gr.price}}</p></div>
             </dt>
             <dd>
               <fieldset class="item-fieldset">
-                <legend>鲜蜂2元福利券</legend>
-                <div class="item-time">18/01/06 00:00至18/01/12 23:59</div>
-                <div class="item-description">本劵限精选商品，订单需满30元可用，每笔订单只能使用一张优惠券，限在线支付</div>
+                <legend>{{gr.leg}}</legend>
+                <div class="item-time">{{gr.time}}</div>
+                <div class="item-description">{{gr.description}}</div>
               </fieldset>
             </dd>
           </dl>
@@ -44,21 +44,45 @@ export default {
             {id:1,type:"未使用",isboo:true},
             {id:2,type:"已使用",isboo:false},
             {id:3,type:"已过期",isboo:false}
-          ]
+          ],
+          shouGray:1,
+          grays:[],
+          wsy:[
+            {id:1,price:'2',leg:"鲜蜂2元福利券",time:"18/01/06 00:00至18/01/12 23:59",description:"本劵限精选商品，订单需满30元可用，每笔订单只能使用一张优惠券，限在线支付"}
+          ],
+          ysy:[],
+          ygq:[],
+
       }
   },
   methods: {
     tabGray(id){
+        var that = this;
         this.gray.forEach(item=>{
           item.isboo = false;
         })
         this.gray.forEach(item=>{
           if(item.id == id){
             item.isboo = true;
+            that.shouGray = item.id;
           }
         })
-    }
+    },
+    getGray(){
+          switch(this.shouGray){
+              case 1: this.grays = this.wsy; return;
+              case 2: this.grays = this.ysy; return;
+              case 3: this.grays = this.ygq; return;
+          }
+      }
+  },
+  updated () {
+    this.getGray()
+  },
+  mounted () {
+    this.getGray()
   }
+
 
 
 }

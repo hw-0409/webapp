@@ -48,9 +48,11 @@ export default {
   },
   mounted () {
       this.isBlock(this.$route.params.id)
+      
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
+

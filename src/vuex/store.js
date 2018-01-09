@@ -3,7 +3,7 @@ import Vuex from "vuex"
 Vue.use(Vuex)
 import getPosition from '../modules/getPosition'
 const state = {
-    info: [],
+    info: [],//登录人的信息
     address:''
 }
 
