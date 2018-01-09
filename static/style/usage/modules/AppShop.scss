@@ -1,0 +1,111 @@
+.app-shop{
+    @include flexbox();
+    @include flex-direction(column);
+
+    header{
+        height: 0.55rem;
+        background: #f9fafd;
+        text-align: center;
+        @include border(0 0 1px 0, #e0e0e0,solid);
+        .car-top{
+            width:100%;
+            height: 0.55rem;
+            line-height: 0.55rem;
+            font-weight: 700;
+            text-align: center;
+            font-size: 16px;
+        }
+    }
+    section{
+       @include flex(1);
+       width: 100%;
+        .car-non{
+            display: none;
+            padding-top: 0.75rem;
+            color:#999;
+            text-align: center;
+            line-height: 0.48rem;
+            img{
+                height: 0.96rem;
+                width: 0.96rem;
+            }
+            span{
+                @include border(1px,#e0e0e0,solid);
+                padding:5px 0.36rem;
+            }
+        }
+        .car-info{
+            background: #FFF;
+            margin-bottom: 0.12rem;
+            table{
+                background-image: url(../../../src/assets/app-my-image/carBg.png),url(../../../src/assets/app-my-image/carBg.png);
+                background-size: auto 0.03rem;  
+                background-position: left top,left bottom;
+                background-repeat: repeat-x;
+                line-height: 0.168rem;
+                
+                color: #333;
+                .car-hidden{
+                   visibility: hidden;
+               } 
+               tr{
+                    td{
+                        
+                        &:nth-of-type(1){
+                            padding:0.08rem 0.12rem 0.08rem 0.18rem; 
+                            font-weight: 400;
+                            vertical-align: baseline;
+                            font-size: 0.168rem;
+                        } 
+                        &:nth-of-type(2){
+                            padding:0.08rem 0; 
+                            font-weight: 400;
+                            font-size: 0.168rem;
+                        } 
+                        &:nth-of-type(3){
+                            padding: .084rem 0;
+                        } 
+                    }
+
+                }
+
+
+            }
+        }
+        .car-group{
+            padding-top: 0.06rem;
+            background: #fff;
+            .group-name{
+                @include flexbox();
+                @include justify-content(space-between);
+               padding:0 0.168rem;
+                p{
+                    color: #999;
+                    height: .36rem;
+                    line-height: 0.24rem;
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        background-color: #ffd600;
+                        width: .048rem;
+                        height: 0.144rem;
+                        vertical-align: -.012rem;
+                        border-radius: .024rem;
+                        margin-right: .06rem; 
+                    }
+                }
+                span{
+                    display: block;
+                    color: #e64f1a;
+                    width: 0.84rem;
+                    height: 0.288rem;
+                    line-height:0.288rem;
+                    border-radius: 0.144rem;
+                    border-width: 1px;
+                    border-style: solid;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
