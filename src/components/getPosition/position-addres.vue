@@ -1,10 +1,10 @@
 <template>
   <div class="position-addres">
         <ul>
-            <li>
+            <li :key="item.id" v-for="item in BuyAddress">
                 <div class="person-info">
-                    <p class="person-name">张三   {{info}}</p>
-                    <p  class="person-addres">{{address}}</p>
+                    <p class="person-name">{{item.person}}    {{item.phone}}</p>
+                    <p  class="person-addres">{{item.detailaddress}}</p>
                 </div>
                 <div class="exit">
                     <span class="yo-ico">&#xf04a;</span>
@@ -18,8 +18,21 @@
 import { mapState } from 'vuex'
 export default {
     name:'position-addres',
+    data(){
+        return{
+            BuyAddress:{}
+        }
+    },
     computed:{
-        ...mapState(["address","info"])
+        ...mapState(["address","info",'infoAddress'])
+    },
+    methods:{
+        getMath(){
+             this.BuyAddress = JSON.parse(localStorage.Item) 
+        }
+    },
+    created(){
+            this.getMath()
     }
 }
 </script>

@@ -8,7 +8,11 @@
            定位到当前位置
        </div>
     <PositionAddres></PositionAddres>
-    
+    <div class="addAddress">
+        <router-link tag="div" :to="{name:'address'}" class="tap-address">
+            +新增地址
+        </router-link>
+    </div>
    </div>
 </template>
 <script>

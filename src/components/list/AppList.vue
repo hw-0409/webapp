@@ -77,7 +77,5 @@ export default {
     padding-bottom: 0.57rem;
   }
 }
-	.mint-indicator-mask{
-		z-index: 999 ;
-	}
+
 </style>

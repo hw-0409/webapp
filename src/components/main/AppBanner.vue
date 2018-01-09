@@ -1,9 +1,9 @@
 <template>
     <div class="app-banner  swiper-container">
         <div class="swiper-wrapper">
-            <div v-for="item in mock" :key="item.id" class="swiper-slide">
+            <router-link tag="div" :to="{name:'indexdetails',params:{name:item.activity.name,id:item.activity.id,cityid:item.activity.ext_params.cityid}}" v-for="item in mock" :key="item.id" class="swiper-slide">
                 <img width="100%" :src="item.activity.img" :title="item.name" alt="">
-            </div>
+            </router-link>
         </div>
         <div class="swiper-pagination"></div>
     </div>

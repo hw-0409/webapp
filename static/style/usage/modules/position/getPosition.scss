@@ -16,6 +16,11 @@
         line-height: .55rem;
         margin-left: .1rem;
     }
+    .save{
+         font-size: .16rem;
+        color: #999;
+        line-height: .55rem;
+    }
     .position-right{
          font-size: .16rem;
          line-height: .55rem;
@@ -35,6 +40,7 @@
     font-size:.16rem; 
 }
 .position-addres{
+    margin-bottom:.61rem;
     background: #fff;
     ul{
         li{
@@ -70,5 +76,22 @@
                 margin-top: .1rem;
             }
         }
+    }
+}
+.addAddress{
+    width: 100%;
+    height: .61rem;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    .tap-address{
+        margin: .09rem 20%;
+        height: .44rem;
+        line-height: .44rem;
+        text-align: center;
+        font-size: .16rem;   
+        color: #000;
+        background-color: #ffd600;
+        border-radius: .05rem;
     }
 }

@@ -1,0 +1,48 @@
+.app-address{
+    padding-top: .55rem;
+        table{
+        background: #fff;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        font-size: .16rem;
+        color: #333;
+            tr{
+                height: .48rem;
+            border: 1px solid #e0e0e0;
+            display: table-row;
+            vertical-align: inherit;
+            border-color: #e0e0e0;
+            th{
+                padding: .1rem 0 .1rem .15rem;
+                text-align: left;
+                width: 1.02rem;
+                font-weight: 400;
+            }
+                td{
+                    span{
+                        margin-right: .2rem;
+                    }
+                    #man{
+                        width: .13rem;
+                        background: #fff;
+                    }
+                    #woman{
+                        width: .13rem;
+                        background: #fff;
+                    }
+                     input{
+                         width: 100%;
+                    border: 0;
+                    background: transparent;
+                     }
+                    .select{
+                        .select-right{
+                            float: right;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+}
