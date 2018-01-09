@@ -3,9 +3,9 @@
       <ul>
           <li v-for="item in mock" :key="item.id">
             <div  class="good-item"><span class="item-title" :style="{color:'#'+item.category_detail.category_color}" >{{item.category_detail.name}}</span><i>更多  ></i></div>
-            <div class="img-f-box">
+            <router-link tag="div" :to="{name:'indexdetails',params:{name:item.activity.name,id:item.activity.id,cityid:item.activity.ext_params.cityid}}" class="img-f-box">
                  <img :src="item.activity.img" alt="">
-            </div>
+            </router-link>
             <ul class="product">
                 <li  v-for="good in item.category_detail.goods" :key="good.id" class="product-box">
                     <router-link :to="{name:'detail',params:{id:good.id,img:good.pre_imgs}}" class="product-img">

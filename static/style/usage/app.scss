@@ -13,7 +13,9 @@
 #app {
     height: 100%;
 }
-
+.mint-indicator-mask{
+	z-index: 999 !important;
+}
 @import "./modules/AppMain";
 @import "./modules/AppHeader";
 @import "./modules/AppFooter";
