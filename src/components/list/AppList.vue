@@ -1,10 +1,10 @@
 <template>
   <div class="app-list">
     <app-header></app-header>
-    <div class="container">
+    <div class="container" v-show="navs.length">
     	<AppListNav :navs='navs' :id="id" ></AppListNav>
     	
-	    <AppListBox :infos="lists" :id="id.value"></AppListBox>
+	    <AppListBox :infos="lists" :id="id"></AppListBox>
     </div>
 <app-footer></app-footer>
   </div>
@@ -25,7 +25,7 @@ export default {
     return {
     	navs:[],
     	lists:'',
-    	id:{value:'104749'}
+    	id:{value:104747}
     }
 	},
 	methods:{
@@ -42,25 +42,12 @@ export default {
 		   		let res = eval('('+ response.data +')')
 		   		that.navs = res.data.categories;
 		   		that.lists = res.data.products
-		  	
 			  })
 		}
-//		getId(id){
-//			
-//			console.log(this.id.value,id)
-//			if(this.id.value != id){
-//				this.isShows =! this.isShows
-//				console.log(this.isShows)
-//				this.id.value = id
-//			}
-//			
-//		
-//		}
 	},
-	
 	created(){
 		this.getData()
-	}
+	},
 
 }
 </script>

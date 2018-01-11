@@ -18,7 +18,8 @@ export default {
     },
     methods: {
         gatGathsr(){
-            axios.post("axf/data/getAddOnGoods"
+            axios.post("/axf/data/getAddOnGoods?asid=5a4c8906419e49944&_r=0.5572099094948351&reflogid=5a56dcbb4ec359515&location_hash=3f7433KubNnSv7WIRwbt79lGjmjpNQcIb2gZ/Uj84aclPlYwOQtRv7hYcz/4bJGTfIv5fM8qzokRhW0wodXQ&cd_cityid=2&location=116.34232,40.076426zchtid=6384&cart_group_id=0&pids=109108,112815,119930"
+            
             ).then((response)=>{
 		   		console.log(response)
 		  	

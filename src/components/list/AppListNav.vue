@@ -15,14 +15,9 @@
 		props:['navs','id','isShows'],
 		data(){
 			return {
-				show:false
+				show:true
 			}
 		},
-		methods:{
-			isShow(){
-               // this.sh
-			}
-		}
 	}
 </script>
 
