@@ -22,7 +22,7 @@
             <img src="http://img01.bqstatic.com//upload/activity/2017030919451621.jpg@90Q.jpg" alt="">
         </router-link>
         <ul class="shyp">
-            <router-link tag="li" :to="{name:'list'}" v-for="item in business" :key="item.id">
+            <router-link tag="li" :to="{name:'list',params:{id:item.cicons_detail.category_id}}" v-for="item in business" :key="item.cicons_detail.category_id">
                 <img :src="item.cicons_detail.img" alt="">
                 <p>{{item.cicons_detail.name}}</p>
             </router-link>
