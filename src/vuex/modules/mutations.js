@@ -12,11 +12,56 @@
     //添加地址
     addAddress(state,item){
         state.infoAddress = item
-
         localStorage.Item = JSON.stringify(item)
-         console.log(localStorage.Item,888)
+    },
+	reduceCar(state, {id}) {//减少商品数量
+        state.car.forEach((item,i) => {
+            if(item.id == id){
+                item.num --
+                if(item.num<1){
+                    state.car.splice(i,1)
+                }
+            }
+        });
+    },
+    addCar(state, {id,name,pric}) {//增加商品
+        let isHas = state.car.some(item => {
+            if (item.id == id) {
+                item.num++
+                return true;
+            } else { 
+                return false;
+            }
+        })
+        if (!isHas) {
+            state.car.push({ id, name, price, num: 1, isSelected: true })
+        }
+    },
+    isChangeShow(state,{id}){ //购物车内的商品是否选中
+        state.car.forEach(item=>{
+          if(item.id == id){
+              item.isShow = !item.isShow
+          }
+        })
+    },
+    isAllChangeShow(state ){
+        let isHas = state.car.every(item=>{
+            if(item.isShow){
+                return true
+            }else{
+                return false
+            }
+        })
+        if(isHas){
+            state.car.forEach(item=>{ 
+                item.isShow = false;
+            })
+        }else{
+            state.car.forEach(item=>{ 
+                item.isShow = true;
+            })
+        }
     }
-	
         
 }
 

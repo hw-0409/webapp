@@ -5,9 +5,10 @@
     </div>
     <div class="add-site">
         <div class="add">
-          <div  class="addSite">
-+ 新增地址  
-          </div>
+          <router-link tag="div" :to="{name:'address'}" class="addSite">
+            +新增地址
+        </router-link>
+          
           </div>
     </div>
   </div>

@@ -40,11 +40,8 @@ export default {
 		   	axios.get(url,{params}).then((response)=>{
 		   		Indicator.close();
 		   		let res = eval('('+ response.data +')')
-		 
 		   		that.navs = res.data.categories;
 		   		that.lists = res.data.products
-		   	//	console.log(that.navs)
-		   		//console.log(that.lists)
 		  	
 			  })
 		}
