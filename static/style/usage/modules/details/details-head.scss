@@ -25,7 +25,7 @@
                 right: 6rem;
                 text-align: center;
                 font-weight: 700;
-                font-size: 1.1rem;
+                font-size: 1rem;
                 @include wrap();
                 @include ellipsis();
         }
@@ -39,4 +39,72 @@
     width: 100%;
     background: #fff;
     border-top: 2px solid #eee;
+     
+.detail-foot-f{
+    width: 18rem;
+    @include flexbox();
+    .foot-center{
+        width: 13rem;
+        line-height: 4rem;
+      @include flexbox();
+      
+      @include align-items(center);
+      span{
+          width: 2rem;
+          height: 2rem;
+          font-size:30px; 
+          text-align: center;
+          line-height: 1.95rem;
+            display: block;
+            border: 1px solid #e0e0e0;
+        border-radius: 50%;
+        background: #fff;
+        color: #ff4300;
+        &:first-child{
+            margin-left:1rem; 
+            line-height: 1.5rem;
+        }
+      }
+        i{
+            margin: 0 .5rem;
+            display: block;
+           width: 1rem;
+            text-align: center;
+        }
+    }
+    .details-left{
+        background:url(./../../bee/img/hert.png) no-repeat 1.2rem .4rem;
+        padding: 0 1rem;
+        font-size: 12px;
+        padding-top:1.8rem;
+        background-size:1.4rem;
+         
+    }
+    
+}
+.buyCar{
+           background:#ffd600 url(./../../bee/img/goodCar.png) no-repeat center center;
+            position: absolute;
+            z-index: 3;
+            height: 4.3rem;
+            width: 4.3rem;
+            border: solid .1rem #e0e0e0;
+            right: .6rem;
+            bottom: .7rem;
+            border-radius: 50%;
+            background-size: 80%;
+            .carNum{
+                position: absolute;
+                right: .1rem;
+                top: .1rem;
+                width: 1.2rem;
+                height: 1.2rem;
+                font-size: 8px;
+                 text-align: center;
+                 line-height: 1rem;
+                border-radius: 50%;
+                color: #fff;
+                 background-color: #f40;
+            }
+    }
 }

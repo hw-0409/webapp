@@ -3,13 +3,14 @@
    <div class="position-box">
        <span  @click="returngo()" class="yo-ico position-left">&#xf07d;</span>
        <p class="position-right">添加地址</p>
-        <div @click="mxs({detailaddress:infoAddress.detailaddress,person:infoAddress.person,phone:infoAddress.phone,id:infoAddress.id})" class="save">保存</div>
+        <div @click="mxs({selected:infoAddress.selected,detailaddress:infoAddress.detailaddress,person:infoAddress.person,phone:infoAddress.phone,id:infoAddress.id,meryaddress:infoAddress.meryaddress})" class="save">保存</div>
        </div>
-    <AppAddressInfo :infoAddress="infoAddress"></AppAddressInfo>
+    <AppAddressInfo :lataAddress='lataAddress' :infoAddress="infoAddress"></AppAddressInfo>
    </div>
 </template>
 
 <script>
+import axios from 'axios'
 import { mapMutations } from 'vuex'
 import AppAddressInfo from './App-Address-info'
 export default {
@@ -22,9 +23,13 @@ export default {
                 person:'',
                 phone:'',
                 detailaddress:'',
-                id:0
+                id:0,
+                meryaddress:'',
+                selected:'',
+                seam:''
             },
-            cd:[]
+            cd:[],
+            lataAddress:[]
             
            
         }
@@ -44,10 +49,19 @@ export default {
             // // this.infoAddress.id ++
              this.infoAddress.id++;
             this.$store.commit('addAddress',this.cd)
+        },
+        getAddress(){
+            let that = this
+            axios.get('/axf/data/getAreaInfo')
+            .then((res)=>{
+                console.log(res)
+                that.lataAddress = res.data.data
+            })
         }
         // ...mapMutations(['addAddress'])
     },
     mounted(){
+        this.getAddress()
         // this.cd.push(this.infoAddress)
         // this.addAddress(this.cd)
 
