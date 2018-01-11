@@ -20,19 +20,20 @@
             
             <div class="foot-center">
                     添加商品：
-                    <span>-</span>
-                        <i>1</i>
-                    <span>+</span>
+                    <span @click="reduceCar">-</span>
+                        <i>0</i>
+                    <span @click="addCar({id:id,name:name,price:price,img:img})">+</span>
             </div>
             </div>
             <div class="buyCar">
-                <div class="carNum"> 2</div>
+                <div class="carNum">2</div>
             </div>
          </div> 
     </div>
 </template>
 
 <script>
+import { mapState,mapActions} from 'vuex'
 import AppDateilContant from './App-Dateil-Contant'
 import Bus from '../../modules/bus'
 import axios from 'axios'
@@ -45,7 +46,12 @@ export default {
         return{
             goods:[],
             imgBox:[],
-            getImg:''
+            getImg:'',
+            price:'',
+            id:'',
+            name:'',
+            num:'',
+            img:''
         }
     },
     methods:{
@@ -55,12 +61,17 @@ export default {
                 params:{id:that.$route.params.id,img:that.$route.params.img}
             }).then((res)=>{
              that.goods = res.data
+             that.id = that.$route.params.id
+             that.price = that.$route.params.price
+             that.name = that.$route.params.name
+             that.img = that.$route.params.img
             })
             
         },
         returngo(){
             this.$router.go(-1)
-        }
+        },
+        ...mapActions(['addCar','reduceCar'])
         
     },
     created(){

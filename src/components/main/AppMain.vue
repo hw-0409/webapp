@@ -1,9 +1,9 @@
 <template>
   <div class="app-main">
     <app-header></app-header>
-       <AppBanner></AppBanner> 
-       <AppIndexNav></AppIndexNav>
-       <AppGoodBox></AppGoodBox>
+       <AppBanner :mockBanner='mockBanner'></AppBanner> 
+       <AppIndexNav :busub='busub' :business='business' :GoodsNav='GoodsNav' :mock='mock'></AppIndexNav>
+       <AppGoodBox :mocks='mocks'></AppGoodBox>
      <router-view></router-view>
 <app-footer></app-footer>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 
-
+import axios from 'axios'
 import AppHeader from "../App-Header/AppHeader"
 import AppFooter from "../App-Footer/AppFooter"
 import AppBanner from "./AppBanner"
@@ -21,6 +21,36 @@ export default {
   name: 'app-main',
   components:{
     AppHeader,AppBanner,AppIndexNav,AppGoodBox,AppFooter
+  }, 
+  data() {
+            return {
+                mock:[],//AppIndexNav
+                GoodsNav:[],
+                business:[],
+                busub:[],
+                mocks:[],//AppGoodBox
+                mockBanner:[]//AppBanner
+            }
+  },
+  methods:{
+      getInfo(){
+            let that = this
+            axios.get("/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=")
+            .then((response)=>{
+                var jsonObj =  (new Function("return" + response.data))()
+                that.mock = jsonObj.data.act_info[1].act_rows
+                that.GoodsNav = jsonObj.data.act_info[3].act_rows
+                 // console.log(that.mock.act_info[1].act_rows) 
+                that.business =  jsonObj.data.act_info[4].act_rows[2].act_rows
+                that.busub =  jsonObj.data.act_info[4].act_rows[3].act_rows
+                that.mocks = jsonObj.data.act_info[5].act_rows
+                that.mockBanner = jsonObj.data.act_info[0].act_rows
+                //.activity.img              
+            })
+         }
+  },
+  mounted(){
+    this.getInfo()
   }
  
 }

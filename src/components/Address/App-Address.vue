@@ -43,7 +43,7 @@ export default {
         },
         mxs(params){
             this.cd.push(params)
-            console.log( this.cd,999)
+            console.log( this.cd,'哇  有了 有了')
             // this.infoAddress.push(params)
             // console.log(this.infoAddress)
             // // this.infoAddress.id ++

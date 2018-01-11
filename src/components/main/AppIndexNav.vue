@@ -41,35 +41,12 @@
 </template> 
 
 <script>
-import axios from 'axios'
 export default {
         name:"app-index-nav",
-       data() {
-            return {
-                mock:[],
-                GoodsNav:[],
-                business:[],
-                busub:[]
-            }
-  },
-  methods:{
-      getInfo(){
-            let that = this
-            axios.get("/axf/data/home?asid=5a375a83d6ec83054&_r=0.18187183066821033&reflogid=5a43aa9b17a708017&cart_pids=&location=116.284891%2C39.919955&defPid=&designated_dealerid=")
-            .then((response)=>{
-                var jsonObj =  (new Function("return" + response.data))()
-                that.mock = jsonObj.data.act_info[1].act_rows
-                that.GoodsNav = jsonObj.data.act_info[3].act_rows
-                 // console.log(that.mock.act_info[1].act_rows) 
-                that.business =  jsonObj.data.act_info[4].act_rows[2].act_rows
-                that.busub =  jsonObj.data.act_info[4].act_rows[3].act_rows
-                //.activity.img              
-            })
-         }
-  },
-  mounted(){
-    this.getInfo()
-  }
+        props:['busub','GoodsNav','mock','business'],
+        methods:{
+        
+        }
        
 }       
 
