@@ -18,7 +18,8 @@ export default {
     },
     methods: {
         gatGathsr(){
-            axios.post("axf/data/getAddOnGoods"
+            axios.post("/axf/data/getAddOnGoods"
+            
             ).then((response)=>{
 		   		console.log(response)
 		  	
