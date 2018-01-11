@@ -28,14 +28,15 @@
 
 <style lang="scss" scoped>
 	.app-list-nav{
-	    width:0.88rem;
+	    width:0.89rem;
 	    ul{
 	    	width:100%;
 	    	height:100%;
 	    	overflow: auto;
+			background: #f8f8f8;
 	        li{
 	            width:100%;
-	            height:0.46rem;
+	            height:0.49rem;
 	            background: #f8f8f8;
 	            border-bottom: 0.01rem solid #e0e0e0;
 	            line-height: 0.46rem;

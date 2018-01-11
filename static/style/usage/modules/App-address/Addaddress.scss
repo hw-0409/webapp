@@ -42,6 +42,21 @@
                             color: #999;
                         }
                     }
+                    .lataAddress{
+                        width: 100%;
+                        select{
+                             border: 0;
+                            margin: 0;
+                            padding: 0;
+                            width: 75%;
+                            -webkit-appearance: none;
+                            background-color: transparent;
+                            vertical-align: baseline;
+                            option{
+                                width: 2.72rem;
+                            }
+                        }
+                    }
                 }
             }
         }
