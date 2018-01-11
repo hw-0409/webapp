@@ -27,8 +27,8 @@ export default {
                 params:{id:that.$route.params.id,cityid:that.$route.params.cityid}
             })
             .then((res)=>{
-                console.log(that)
-                console.log(res,1111)
+               // console.log(that)
+               // console.log(res,1111)
                 that.detail = res.data
                 that.infoTitle = that.$route.params.name 
             })

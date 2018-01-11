@@ -31,7 +31,7 @@ export default {
 	methods:{
 		getData(){
 				let that = this
-				let url = '/axf/data/getCategoryProduct?asid=5a431dc2ab51d9165&_r=0.7133663006016342&reflogid=5a4dda31cd79a4889&location_hash=5971adAoynJP1PTHy7VOMO8cNY4GNxqqpeDBbWCCOW9%2B2jQ8TwwCS%2Fry37i0wvktulL7RbXB8VeeMjxWdztJFnAyPuFqURa92ru9f4CdZWRg&zchtid=14449&bigids=2%2C0'
+				let url = '/axf/data/getCategoryProduct?asid=5a375a83d6ec83054&_r=0.624797450645018&reflogid=5a5621787cbaf8090&location_hash=5c4af0%2BgoGfoivAETudi9sjQMP9OU2t2YyXZQxerdxHuQ4KD5pNi2SbDWCKIBSa%2FHu0WCs0fQRbUrGEDpGvP4W&zchtid=15204&bigids=2%2C0'
 		   		let params = {}
 		   		Indicator.open({
 					  text: '加载中...',

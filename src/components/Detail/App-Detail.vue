@@ -15,11 +15,20 @@
         </div>
 
          <div class="app-detail-foot">
-            <span  class="yo-ico details-left">&#xf07d;</span>
-                <div class="foot-center">
-                       添加商品
-                    </div>
+            <div class="detail-foot-f">
+                    <span  class="yo-ico details-left">收藏</span>
+            
+            <div class="foot-center">
+                    添加商品：
+                    <span>-</span>
+                        <i>1</i>
+                    <span>+</span>
             </div>
+            </div>
+            <div class="buyCar">
+                <div class="carNum"> 2</div>
+            </div>
+         </div> 
     </div>
 </template>
 
