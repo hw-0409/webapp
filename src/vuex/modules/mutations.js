@@ -24,7 +24,7 @@
             }
         });
     },
-    addCar(state, {id,name,pric}) {//增加商品
+    addCar(state, {id,name,price,img}) {//增加商品
         let isHas = state.car.some(item => {
             if (item.id == id) {
                 item.num++
@@ -34,7 +34,7 @@
             }
         })
         if (!isHas) {
-            state.car.push({ id, name, price, num: 1, isSelected: true })
+            state.car.push({ id, name, price,img, num: 1, isSelected: true })
         }
     },
     isChangeShow(state,{id}){ //购物车内的商品是否选中
