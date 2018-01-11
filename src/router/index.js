@@ -19,6 +19,8 @@ import AppDetail from "../components/Detail/App-Detail.vue";
 import AppIndexDetail from "../components/Detail/IndexDetails/index-details.vue";
 import AppPosition from "../components/getPosition/App-getPosition.vue";
 import AppAddress from "../components/Address/App-Address.vue";
+import AppGather from "../components/AppGather/AppGather.vue";
+
 
 const routes = [
     { path: "", redirect: "main" },
@@ -28,17 +30,18 @@ const routes = [
     { path: "/list", name: "list", component: AppList }, //闪送超市
     { path: "/shop", name: "shop", component: AppShop }, //购物
     { path: "/my", name: "my", component: AppMy }, //我的
-    { path: "/my-info", name: "my-info", component: AppMyInfo },//个人信息
-    { path: "/my-shop", name: "my-shop", component: AppMyShop },//商品收藏
-    { path: "/my-store", name: "my-store", component: AppMyStore },//店铺收藏
-    { path: "/my-add-store", name: "my-add-store", component: AppMyAddStore },//添加店铺
-    { path: "/my-order/:id", name: "my-order", component: AppMyOrder, },//订单项
-    { path: "/my-block/:id", name: "my-block", component: AppMyBlock, },//积分 优惠券 地址 客服 关于我们
-    { path: "/my-login", name: "my-login", component: AppMyLogin, },//登录
-    { path:"/position", name:"position", component:AppPosition},//定位
-    
-    { path:"/address", name:"address", component:AppAddress},
-    { path:"/indexdetails/id=:id&cityid=:cityid&name=:name&=", name:"indexdetails", component:AppIndexDetail},
+    { path: "/my-info", name: "my-info", component: AppMyInfo }, //个人信息
+    { path: "/my-shop", name: "my-shop", component: AppMyShop }, //商品收藏
+    { path: "/my-store", name: "my-store", component: AppMyStore }, //店铺收藏
+    { path: "/my-add-store", name: "my-add-store", component: AppMyAddStore }, //添加店铺
+    { path: "/my-order/:id", name: "my-order", component: AppMyOrder, }, //订单项
+    { path: "/my-block/:id", name: "my-block", component: AppMyBlock, }, //积分 优惠券 地址 客服 关于我们
+    { path: "/my-login", name: "my-login", component: AppMyLogin, }, //登录
+    { path: "/position", name: "position", component: AppPosition }, //定位
+    { path: "/gather", name: "gather", component: AppGather }, //凑单专区
+
+    { path: "/address", name: "address", component: AppAddress },
+    { path: "/indexdetails/id=:id&cityid=:cityid&name=:name&=", name: "indexdetails", component: AppIndexDetail },
 
 
     { path: "**", redirect: "main" }

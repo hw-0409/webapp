@@ -3,46 +3,30 @@ import Vuex from "vuex"
 Vue.use(Vuex)
 
 import actions from './modules/actions'
-import mutations from './modules/mutations' 
+import mutations from './modules/mutations'
+import getters from './modules/getters'
 const state = {
-    infoAddress:[],
-    info: [],//登录人的信息
-    address:''
+    infoAddress: [],
+    info: [], //登录人的信息
+    address: '',
+    car: [
+        { id: 1, name: '福成原味酸牛奶', price: '8.9', num: 1, isShow: true },
+        { id: 2, name: '瀚味轩香辣蟹', price: '8.9', num: 1, isShow: true },
+        { id: 4, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
+        { id: 5, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
+        { id: 6, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
+        { id: 7, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
+        { id: 8, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
+        { id: 9, name: '茂谷柑', price: '8.9', num: 7, isShow: true }
+    ]
 }
 
-const mutations = {
-    
-    initInfo(state, info) {
-        state.info = info
-    },
-    //定位，获取到定位信息后，加载其他的内容
-    getPosition(state,info){
-        state.address = info.address
-    }
-	
-        
-}
-const actions = {
-    initInfo({ commit }) {
-        setTimeout(() => {
-            let results = localStorage.axfInfo || ''
-            commit('initInfo', results)
-        }, 300);
-    },
-    getPosition({ commit }){
-          setTimeout(() => {
-           // console.log(getPosition)
-            	getPosition((info)=>{
-			    commit('getPosition',info)
-                 })
-         }, 2000);
-    }
-}
 
 const store = new Vuex.Store({
     state,
     mutations,
-    actions
+    actions,
+    getters
 })
 
 export default store
