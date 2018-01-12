@@ -28,8 +28,8 @@ export default {
     },
     methods:{
         getMath(){
-             this.BuyAddress = JSON.parse(localStorage.Item) 
-        }
+             this.BuyAddress = JSON.parse(localStorage.Item||'[]') 
+        }       
     },
     created(){
             this.getMath()

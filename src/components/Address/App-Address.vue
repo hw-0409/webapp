@@ -17,7 +17,6 @@ export default {
     name:'app-addres',
       data(){
         return{
-            // aaa:JSON.parse(localStorage.Item?localStorage.Item:'[]').length,
             infoAddress:
                 { 
                 person:'',
@@ -43,10 +42,6 @@ export default {
         },
         mxs(params){
             this.cd.push(params)
-            console.log( this.cd,'哇  有了 有了')
-            // this.infoAddress.push(params)
-            // console.log(this.infoAddress)
-            // // this.infoAddress.id ++
              this.infoAddress.id++;
             this.$store.commit('addAddress',this.cd)
             this.$router.push({name:"main"})
@@ -55,18 +50,12 @@ export default {
             let that = this
             axios.get('/axf/data/getAreaInfo')
             .then((res)=>{
-                console.log(res)
                 that.lataAddress = res.data.data
             })
         }
-        // ...mapMutations(['addAddress'])
     },
     mounted(){
         this.getAddress()
-        // this.cd.push(this.infoAddress)
-        // this.addAddress(this.cd)
-
-        // console.log(this.$store.infoAddress)
     }
     
 }
