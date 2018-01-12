@@ -27,7 +27,7 @@ export default {
   computed: {
      ...mapState(["car"]),
      num:{
-       get(){
+       get(){ 
           let num = 0;
           this.car.forEach(item=>{
             num += item.num

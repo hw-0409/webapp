@@ -1,11 +1,17 @@
 <template>
   <div class="app-main">
-    <app-header></app-header>
-       <AppBanner :mockBanner='mockBanner'></AppBanner> 
-       <AppIndexNav :busub='busub' :business='business' :GoodsNav='GoodsNav' :mock='mock'></AppIndexNav>
-       <AppGoodBox :mocks='mocks'></AppGoodBox>
-     <router-view></router-view>
-<app-footer></app-footer>
+      <app-header></app-header>
+      <AppBanner :mockBanner='mockBanner'></AppBanner> 
+      <AppIndexNav :busub='busub' :business='business' :GoodsNav='GoodsNav' :mock='mock'></AppIndexNav>
+      <AppGoodBox :mocks='mocks'></AppGoodBox>
+      <router-view></router-view>
+      <app-footer></app-footer>
+
+      <div class="app-mark" v-if="isMark">
+        <div class="boot_gps">
+          <p>定位中</p> 
+        </div>
+      </div>
   </div>
 </template>
 
@@ -23,14 +29,15 @@ export default {
     AppHeader,AppBanner,AppIndexNav,AppGoodBox,AppFooter
   }, 
   data() {
-            return {
-                mock:[],//AppIndexNav
-                GoodsNav:[],
-                business:[],
-                busub:[],
-                mocks:[],//AppGoodBox
-                mockBanner:[]//AppBanner
-            }
+    return {
+        mock:[],//AppIndexNav
+        GoodsNav:[],
+        business:[],
+        busub:[],
+        mocks:[],//AppGoodBox
+        mockBanner:[],//AppBanner
+        isMark:true
+    }
   },
   methods:{
       getInfo(){
@@ -46,6 +53,9 @@ export default {
                 that.mocks = jsonObj.data.act_info[5].act_rows
                 that.mockBanner = jsonObj.data.act_info[0].act_rows
                 //.activity.img              
+                setTimeout(()=>{
+                  this.isMark=false
+                },1000)
             })
          }
   },
@@ -56,5 +66,55 @@ export default {
 }
 </script>
 
-<style >
+<style lang="scss" scoped>
+    .app-mark{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background:#ffd82b url(../../assets/app-mark/boot_logo.png) no-repeat;
+        background-size: 60%;
+        padding-top: 80%;
+        background-position: center 30%;
+        .boot_gps{
+            p{
+              background:#ffd82b url(../../assets/app-mark/boot_gps.png) no-repeat;           
+              background-size: contain;
+              background-position: center;
+              width: 100;
+              margin:0 auto;
+              text-align: center;
+              font-size: 14px;
+              width: 50px;
+              padding-top: 36px;
+              height: 36px;
+              animation: donghua 5s infinite;
+            }
+        }
+        
+    }
+
+    @keyframes donghua {
+    0% {
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
 </style>
+
