@@ -47,7 +47,8 @@ const routes = [
     { path: "**", redirect: "main" }
 ]
 const router = new Router({
-    routes
+    routes,
+     mode: 'history'
 })
 
 export default router

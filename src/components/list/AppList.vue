@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import { Indicator } from 'mint-ui';
 import AppHeader from "../App-Header/AppHeader"
 import AppFooter from "../App-Footer/AppFooter"
@@ -28,6 +29,9 @@ export default {
     	id:{value:104747}
     }
 	},
+	computed:{
+		...mapState(['listId'])
+	},
 	methods:{
 		getData(){
 				let that = this
@@ -41,11 +45,13 @@ export default {
 		   		Indicator.close();
 		   		let res = eval('('+ response.data +')')
 		   		that.navs = res.data.categories;
-		   		that.lists = res.data.products
+					 that.lists = res.data.products
 			  })
 		}
 	},
+
 	created(){
+		this.id.value = this.listId? this.listId:104747
 		this.getData()
 	},
 
