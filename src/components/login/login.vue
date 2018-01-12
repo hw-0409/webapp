@@ -8,7 +8,7 @@
             <p>为了方便您及时查询订单信息，鲜蜂侠需要验证您的手机号为查询帐号</p>
         </div>
         <div class="log">
-            <div class="user us"><input type="text" onkeypress="return event.keyCode>=48&&event.keyCode<=57" v-model="user" placeholder="手机号码"/><span :class="{active:cored!='获取验证码'}" @click="changeCoreed">{{cored}}</span></div>
+            <div class="user us"><input type="text" onkeypress="return event.keyCode>=48&&event.keyCode<=57" v-model="user" placeholder="手机号码"/><span :class="{active:cored!='获取验证码'}" @click="verUser()">{{cored}}</span></div>
             <div class="user"><input type="text" v-model="code" placeholder="短信验证码"/><b>{{newCode}}</b></div>
         </div>
         <p class="voice">收不到短信？使用<span class="voick-link">语音验证码</span></p>
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
       changeCoreed(){
-          if(this.cored=='获取验证码'){
+          
             let ff = 60;
             let that = this
             let time = setInterval(()=>{
@@ -42,7 +42,7 @@ export default {
                         this.cored ='获取验证码'
                     }
             },1000)
-          }
+          
       },
       isToast(type){
         Toast({
@@ -53,12 +53,15 @@ export default {
       },
       verUser(){//验证手机号
         var pattern = /^(13|14|15|17|18|19)[0-9]{9}$/;
-        if(this.user.length == 0){
-            this.isToast("请输入手机号")
-        }else if(pattern.test(this.user)){
-            this.newCode = this.getCode()
-        }else{
-            this.isToast("请输入正确的手机号")
+        if(this.cored=='获取验证码'){
+            if(this.user.length == 0){
+                this.isToast("请输入手机号")
+            }else if(pattern.test(this.user)){
+                this.newCode = this.getCode()
+                this.changeCoreed();
+            }else{
+                this.isToast("请输入正确的手机号")
+            }
         }
         
       },
@@ -87,7 +90,7 @@ export default {
           }
       }
   }
-}
+} 
 </script>
 <style lang="scss" scoped>
 
