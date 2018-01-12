@@ -16,8 +16,7 @@
 
          <div class="app-detail-foot">
             <div class="detail-foot-f">
-                    <span  class="yo-ico details-left">收藏</span>
-            
+                    <span  class="yo-ico details-left" >收藏</span>
             <div class="foot-center">
                     添加商品：
                     <span @click="reduceCar({id})">-</span>

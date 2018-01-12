@@ -51,9 +51,13 @@ export default {
 	},
 
 	created(){
-		this.id.value = this.listId? this.listId:104747
+		this.id.value = this.listId == 100001 ? 104747 : this.listId
+		if(!this.listId){
+			this.id.value=104747
+		}
 		this.getData()
 	},
+
 
 }
 </script>

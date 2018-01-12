@@ -128,7 +128,7 @@ export default {
     }
   },
   methods:{
-    ...mapActions(['initInfo',"reduceCar","addCar","isChangeShow","isAllChangeShow"]),
+    ...mapActions(['initCar','initInfo',"reduceCar","addCar","isChangeShow","isAllChangeShow"]),
     
     //收货时间
     nowTime(){
@@ -136,7 +136,8 @@ export default {
         let H = new Date().getHours()
         let time ;
         switch (H) {
-          case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:case 9: time = 0; break;
+          case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:case 8:time = -1; break;
+          case 9: time = 0; break;
           case 10:time = 1;break;
           case 11:time = 2;break;
           case 12:time = 3;break;
@@ -150,7 +151,9 @@ export default {
           case 20:time = 11;break;
           default:time = 12;break;
         }
-        if(time >=0 && time <=11){
+        if(time<0){
+          this.isTaday=this.timeQuantum
+        }else if(time >=0 && time <=11){
           this.isTaday[0] = "30分钟送达";
           this.isTaday.push(...this.timeQuantum.slice(time+1,12))
         }else{
@@ -160,6 +163,7 @@ export default {
     
   },
   mounted () {
+    this.initCar()
     this.initInfo()
     this.nowTime()
     setTimeout(()=>{

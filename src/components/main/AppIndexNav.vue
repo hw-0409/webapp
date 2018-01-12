@@ -47,10 +47,8 @@ export default {
         props:['busub','GoodsNav','mock','business'],
         methods:{
             getListId(id){
-
                   this.$store.commit('getListId',id)
                   this.$router.push({name:'list'})
-                
             }
                  
         }

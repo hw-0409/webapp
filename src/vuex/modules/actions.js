@@ -7,6 +7,12 @@ const actions = {
             commit('initInfo', results)
         }, 300);
     },
+    initCar({ commit }){
+        setTimeout(() => {
+            let res = JSON.parse(localStorage.car || '[]')
+            commit('initCar', res)
+        }, 300);
+    },
     getPosition({ commit }){
         
           setTimeout(() => {
@@ -15,7 +21,7 @@ const actions = {
 			    commit('getPosition',info)
                  })
          }, 2000);
-    },
+    }, 
     reduceCar({ commit },type){
         setTimeout(() => {
             commit('reduceCar', type)
@@ -35,6 +41,6 @@ const actions = {
         setTimeout(() => {
             commit('isAllChangeShow')
         }, 300);
-    }
+    },
 }
 export default actions
