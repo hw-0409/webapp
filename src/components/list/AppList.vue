@@ -51,14 +51,11 @@ export default {
 	},
 
 	created(){
-<<<<<<< HEAD
-		this.id.value = this.listId ==(100001 || "")? 104747:this.listId
-=======
+
 		this.id.value = this.listId == 100001 ? 104747 : this.listId
 		if(!this.listId){
 			this.id.value=104747
 		}
->>>>>>> master
 		this.getData()
 	},
 
