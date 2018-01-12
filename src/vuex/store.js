@@ -18,7 +18,8 @@ const state = {
         { id: 7, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
         { id: 8, name: '越南白心火龙果（大果）', price: '8.9', num: 1, isShow: true },
         { id: 9, name: '茂谷柑', price: '8.9', num: 7, isShow: true }
-    ]
+    ],
+    listId:''
 }
 
 

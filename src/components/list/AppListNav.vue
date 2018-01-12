@@ -1,7 +1,7 @@
 <template>
 	<div class="app-list-nav">
     	<ul>
-    		<li :key='nav.id' v-for="nav in navs" @click="id.value=nav.id"><span v-show="show"></span>{{nav.name}}</li>
+    		<li  :key='nav.id' v-for="nav in navs" @click="id.value=nav.id"><span v-show="show"></span>{{nav.name}}</li>
     	</ul>
 	    
 	</div>

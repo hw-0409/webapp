@@ -61,6 +61,9 @@
                 item.isShow = true;
             })
         }
+    },
+    getListId(state,id){
+        state.listId = id
     }
         
 }

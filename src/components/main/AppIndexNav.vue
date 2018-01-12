@@ -22,16 +22,16 @@
             <img src="http://img01.bqstatic.com//upload/activity/2017030919451621.jpg@90Q.jpg" alt="">
         </router-link>
         <ul class="shyp">
-            <router-link tag="li" :to="{name:'list',params:{id:item.cicons_detail.category_id}}" v-for="item in business" :key="item.cicons_detail.category_id">
+            <li @click="getListId(item.cicons_detail.category_id)"  v-for="item in business" :key="item.cicons_detail.category_id">
                 <img :src="item.cicons_detail.img" alt="">
                 <p>{{item.cicons_detail.name}}</p>
-            </router-link>
+            </li>
         </ul>
         
         <div class="busub">
             <ul class="busub-ul">
                 <router-link tag="li" :to="{name:'indexdetails',params:{name:item.activity.name,id:item.activity.id,cityid:item.activity.ext_params.cityid}}"  v-for="item in busub" :key="item.id" >
-                    <img :src="item.cscene_detail.img" alt="">
+                    <img :src="item.cscene_detail.img" alt=""> 
                 </router-link>
             </ul>
         </div>
@@ -41,11 +41,18 @@
 </template> 
 
 <script>
+
 export default {
         name:"app-index-nav",
         props:['busub','GoodsNav','mock','business'],
         methods:{
-        
+            getListId(id){
+
+                  this.$store.commit('getListId',id)
+                  this.$router.push({name:'list'})
+                
+            }
+                 
         }
        
 }       

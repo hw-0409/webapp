@@ -27,7 +27,7 @@ const routes = [
 
     { path: "/main", name: "main", component: AppMian }, //首页=0
     { path: "/detail/:id/:img/:name/:price&=", name: "detail", component: AppDetail }, //详情页
-    { path: "/list/:id", name: "list", component: AppList }, //闪送超市
+    { path: "/list", name: "list", component: AppList }, //闪送超市
     { path: "/shop", name: "shop", component: AppShop }, //购物
     { path: "/my", name: "my", component: AppMy }, //我的
     { path: "/my-info", name: "my-info", component: AppMyInfo }, //个人信息
@@ -50,6 +50,5 @@ const router = new Router({
     routes,
      mode: 'history'
 })
-
 
 export default router
