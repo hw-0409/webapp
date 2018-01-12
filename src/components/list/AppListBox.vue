@@ -7,7 +7,7 @@
     	
     	<div class="list-box">
     		<AppListItem  :key="info.id" v-for="info in infos[id.value]">
-	    		<div @click="toDateil(info.id,info.pre_imgs)" slot='p-img'><img :src="info.app_mimg"></div>
+	    		<div @click="toDateil(info.id,info.pre_imgs,info.name,info.market_price,info.img)" slot='p-img'><img :src="info.app_mimg"></div>
 
 	    		<h4 slot="p-name" class="p-name">{{info.name}}</h4>
 				<p v-show="info.is_xf==1" slot="jing" class="jing">精选</p>
@@ -34,8 +34,8 @@
         	}
         },
 		methods:{
-			toDateil(id,img){
-				this.$router.push({ name: 'detail',params: { id:id,img:img }})
+			toDateil(id,img,name,price,image){
+				this.$router.push({ name: 'detail',params: { id:id,img:img,name:name,price:price,image:image}})
 			}
 //			getData(){
 //				let that = this

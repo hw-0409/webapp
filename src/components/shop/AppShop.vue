@@ -10,7 +10,7 @@
         <router-link to="/mian" tag="span">去逛逛</router-link>
       </div>
       <div class="car-group " v-else>
-        <div class="car-info">
+        <router-link to="/position" tag="div" class="car-info" >
             <table>
               <tr>
                 <td width="28%">收<i class="car-hidden">a</i>货<i class="car-hidden">a</i>人</td>
@@ -26,7 +26,7 @@
                 <td>北京市回龙观 北京市回龙观地铁站</td>
               </tr>
             </table>
-      </div>
+        </router-link>
         <div class="group-name">
             <p>闪送超市</p>
             <router-link to="/gather" tag="span">凑单专区</router-link>
@@ -57,7 +57,7 @@
         <ul class="group-list">
           <li class="group-item" v-for="car in car" :key="car.id">
               <div class="group-item-check" :class="{'checkActivt':car.isShow}" @click="isChangeShow({id:car.id})"></div>
-              <div class="group-item-img"><img src="http://m.beequick.cn/static/bee/img/m/product_operate-57bf1d7b.png" :title="car.name"></div>
+              <div class="group-item-img"><img :src="car.img" :title="car.name"></div>
               <div class="group-item-namePrice">
                   <div class="group-item-name">{{car.name}}</div>
                   <div class="group-item-price">

@@ -20,14 +20,14 @@
             
             <div class="foot-center">
                     添加商品：
-                    <span @click="reduceCar">-</span>
-                        <i>0</i>
+                    <span @click="reduceCar({id})">-</span>
+                        <i>{{getNowNum(id)}}</i>
                     <span @click="addCar({id:id,name:name,price:price,img:img})">+</span>
             </div>
             </div>
-            <div class="buyCar">
-                <div class="carNum">2</div>
-            </div>
+            <router-link to="/shop" tag="div" class="buyCar">
+                <div class="carNum">{{num}}</div>
+            </router-link>
          </div> 
     </div>
 </template>
@@ -50,10 +50,21 @@ export default {
             price:'',
             id:'',
             name:'',
-            num:'',
-            img:''
+            img:'',
         }
     },
+    computed: {
+     ...mapState(["car"]),
+     num:{
+       get(){ 
+          let num = 0;
+          this.car.forEach(item=>{
+            num += item.num
+          })
+          return num
+       }
+     }
+  },
     methods:{
         getGoods(){
             let that =this
@@ -64,20 +75,29 @@ export default {
              that.id = that.$route.params.id
              that.price = that.$route.params.price
              that.name = that.$route.params.name
-             that.img = that.$route.params.img
+             that.img = that.$route.params.image
             })
             
         },
         returngo(){
             this.$router.go(-1)
         },
-        ...mapActions(['addCar','reduceCar'])
+        ...mapActions(['addCar','reduceCar']),
+        getNowNum(id){
+            let nowNum=0;
+            this.car.forEach(item=>{
+                if(item.id==id){
+                    nowNum = item.num
+                }
+            })
+            return nowNum
+        }
         
     },
     created(){
         this.getGoods()
     },
-    updated(){
+    updated () {
        var banner = document.getElementById("bannerContainer")
        var product = document.getElementsByClassName("product-name")[0]
        var header = document.getElementsByClassName("header-center")[0]
@@ -97,12 +117,7 @@ export default {
         var sr = this.getImg.substr(6,4)
        img.src = "http://img01.bqstatic.com/upload/goods/"+str+"/"+tr+"/"+sr+"/"+this.$route.params.img+"@500w_500h_90Q"
        banner.appendChild(img)
-    },
-     mounted () {
-            Bus.$on('inceptMessage',(imgBox) => {
-                this.imgBox = imgBox
-            })
-        }
+    }
     
 
   

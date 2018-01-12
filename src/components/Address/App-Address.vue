@@ -49,6 +49,7 @@ export default {
             // // this.infoAddress.id ++
              this.infoAddress.id++;
             this.$store.commit('addAddress',this.cd)
+            this.$router.push({name:"main"})
         },
         getAddress(){
             let that = this

@@ -8,7 +8,7 @@
             </router-link>
             <ul class="product">
                 <li  v-for="good in item.category_detail.goods" :key="good.id" class="product-box">
-                    <router-link :to="{name:'detail',params:{id:good.id,img:good.pre_imgs,name:good.name,price:good.market_price}}" class="product-img">
+                    <router-link :to="{name:'detail',params:{id:good.id,img:good.pre_imgs,name:good.name,price:good.market_price,image:good.img}}" class="product-img">
                         <img  :src="good.img" :title="good.title" :alt="good.name">
                        
                     </router-link>
@@ -18,7 +18,7 @@
                     <div class="product-info">
                         <span>{{good.specifics}}</span>
                         <i>￥{{good.price}}</i><b>￥{{good.market_price}}</b>
-                        <em>+</em>
+                        <em @click="addCar({id:good.id,name:good.name,img:good.img,price:good.market_price})">+</em>
                     </div>
                 </li>
             </ul>
@@ -29,12 +29,13 @@
 
 
 <script>
+
 import { mapActions } from 'vuex'
 export default {
         name:"app-good-large",
         props:['mocks'],
   methods:{
-      ...mapActions(["getPosition"])
+      ...mapActions(["getPosition","addCar"])
   },
   mounted(){
       this.getPosition() 
