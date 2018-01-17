@@ -3,10 +3,9 @@
                 <div @click="getPositions()" class="header-left">
                     {{address}}
                     </div>
-                <div class="header-right">
-
+                <div @click="seach" class="header-right">
                 <span class="seach yo-ico">&#xf067;</span>
-                <i>搜索</i>
+                <i>搜&nbsp;索</i>
 
                 </div>
         </div>
@@ -23,7 +22,10 @@ export default {
                         this.$router.push({name:'position'})
  
                 },
-                ...mapActions(['getPosition'])
+                ...mapActions(['getPosition']),
+                seach(){
+                        this.$router.push({name:'seach'})
+                }
         },
         computed:{
                 ...mapState(["address"])

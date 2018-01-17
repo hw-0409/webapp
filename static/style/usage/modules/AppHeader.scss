@@ -23,12 +23,12 @@
       .header-right{
             font-size: .08rem;
             height: .52rem; 
-            width: .72rem;
+            width: .8rem;
             color: #222;
             @include flexbox();
             @include flex-direction(column);
            i{
-            padding-left:.35rem;
+            padding-left:.4rem;
             padding-bottom: .1rem;
             }
           .seach{

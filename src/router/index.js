@@ -20,7 +20,8 @@ import AppIndexDetail from "../components/Detail/IndexDetails/index-details.vue"
 import AppPosition from "../components/getPosition/App-getPosition.vue";
 import AppAddress from "../components/Address/App-Address.vue";
 import AppGather from "../components/AppGather/AppGather.vue";
-
+import AppSeach from "../components/AppSeach/seach.vue";
+import SeachHotBox from "../components/AppSeach/seachHotBox.vue";
 
 const routes = [
     { path: "", redirect: "main" },
@@ -39,6 +40,13 @@ const routes = [
     { path: "/my-login", name: "my-login", component: AppMyLogin, }, //登录
     { path: "/position", name: "position", component: AppPosition }, //定位
     { path: "/gather", name: "gather", component: AppGather }, //凑单专区
+    { path: "/seach", name: "seach", component: AppSeach,
+       children:[{
+            path: '/seach/seachHot',
+            name:'seachHot',
+            component: SeachHotBox
+       }]
+}, //凑单专区
 
     { path: "/address", name: "address", component: AppAddress },
     { path: "/indexdetails/id=:id&cityid=:cityid&name=:name&=", name: "indexdetails", component: AppIndexDetail },
