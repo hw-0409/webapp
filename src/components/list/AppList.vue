@@ -37,11 +37,11 @@ export default {
 				let that = this
 				let url = '/axf/data/getCategoryProduct?asid=5a375a83d6ec83054&_r=0.624797450645018&reflogid=5a5621787cbaf8090&location_hash=5c4af0%2BgoGfoivAETudi9sjQMP9OU2t2YyXZQxerdxHuQ4KD5pNi2SbDWCKIBSa%2FHu0WCs0fQRbUrGEDpGvP4W&zchtid=15204&bigids=2%2C0'
 		   		let params = {}
-		   		Indicator.open({
+		   		Indicator.open({//列表加载动画
 					  text: '加载中...',
 					  spinnerType: 'fading-circle'
 					});
-		   	axios.get(url,{params}).then((response)=>{
+		   	axios.get(url,{params}).then((response)=>{//请求数据
 		   		Indicator.close();
 		   		let res = eval('('+ response.data +')')
 		   		that.navs = res.data.categories;
@@ -51,6 +51,7 @@ export default {
 	},
 
 	created(){
+
 		this.id.value = this.listId == 100001 ? 104747 : this.listId
 		if(!this.listId){
 			this.id.value=104747

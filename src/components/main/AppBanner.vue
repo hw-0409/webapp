@@ -19,7 +19,7 @@ export default {
 
   },
    updated(){
-            new swiper('.app-banner',
+            new swiper('.app-banner',//实例化轮播图
             {    loop:true,
                 autoplay:{delay:2000},
                  pagination: {
