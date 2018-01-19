@@ -6,14 +6,29 @@ const mutations = {
     initCar(state, car) {
         state.car = car
     },
+    initAddress(state, address){
+        state.infoAddress = address
+    },
     //定位，获取到定位信息后，加载其他的内容
     getPosition(state, info) {
         state.address = info.address
     },
     //添加地址
-    addAddress(state, item) { 
-        state.infoAddress = item
-        localStorage.Item = JSON.stringify(item)
+    addAddress(state, item) {
+        state.infoAddress.push(item)
+        state.infoAddress[0].isShow = true
+        localStorage.Item = JSON.stringify(state.infoAddress)
+    },
+    isShou(state,{id}){
+        state.infoAddress.forEach(item=>{
+            item.isShow = false;
+        })
+        state.infoAddress.forEach(item=>{
+            if(item.id == id){
+                item.isShow = true;
+            }
+        })
+        localStorage.Item = JSON.stringify(state.infoAddress)
     },
     reduceCar(state, { id }) { //减少商品数量
         state.car.forEach((item, i) => {
@@ -27,14 +42,14 @@ const mutations = {
         localStorage.car = JSON.stringify(state.car)
     },
     addCar(state, { id, name, price, img }) { //增加商品
-        let isHas = state.car.some(item => {
-            if (item.id == id) {
-                item.num++
-                    return true;
-            } else {
-                return false;
-            }
-        })
+            let isHas = state.car.some(item => {
+                if (item.id == id) {
+                    item.num++
+                        return true;
+                } else {
+                    return false;
+                }
+            })
         if (!isHas) {
             state.car.push({ id, name, price, img, num: 1, isShow: true })
         }

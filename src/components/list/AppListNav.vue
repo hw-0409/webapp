@@ -1,7 +1,7 @@
 <template>
 	<div class="app-list-nav">
     	<ul>
-    		<li :key='nav.id' v-for="nav in navs" @click="changeID(nav.id)"><span v-show="id.value==nav.id"></span>{{nav.name}}</li>
+    		<li :style="{background:`url(${nav.flag})`}":key='nav.id' v-for="nav in navs" @click="changeID(nav.id)"><span v-show="id.value==nav.id"></span>{{nav.name}}</li>
     	</ul>
 	    
 	</div>
@@ -38,15 +38,18 @@
 	            text-align: center;
 	            color: #6d6d6d;
 	            font-size: 0.14rem;
-	            position: relative;
-	            /*border-left: 5px solid #ffd600;*/
+				position: relative;
+				background-repeat: no-repeat !important;
+				background-position: top right !important;
+				background-size: auto 70% !important;
 	            span{
 	            	display:block;
 	            	position: absolute;
-	            	top: 0;
+	            	top: 10%;
 	            	left: 0;
 	            	width:5px;
-	            	height:100%;
+	            	height:80%;
+					border-radius: 0 5px 5px 0;
 	            	background: #ffd600;
 	            	//display: none;
 	            }

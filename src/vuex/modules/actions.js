@@ -2,16 +2,23 @@
 import getPosition from '../../modules/getPosition'
 const actions = {
     initInfo({ commit }) {
-        setTimeout(() => {
+       
             let results = localStorage.axfInfo || ''
             commit('initInfo', results)
-        }, 300);
+       
     },
     initCar({ commit }){
         setTimeout(() => {
             let res = JSON.parse(localStorage.car || '[]')
             commit('initCar', res)
         }, 300);
+    },
+    initAddress({ commit }){
+        let res = JSON.parse(localStorage.Item || '[]')
+        commit('initAddress', res)
+    },
+    isShou({ commit },type){
+        commit('isShou', type)
     },
     getPosition({ commit }){
         

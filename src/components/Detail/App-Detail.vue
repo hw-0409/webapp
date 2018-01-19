@@ -16,7 +16,7 @@
 
          <div class="app-detail-foot">
             <div class="detail-foot-f">
-                    <span  class="yo-ico details-left" >收藏</span>
+                    <span  class="yo-ico details-left" @click="collect()">收藏</span>
             <div class="foot-center">
                     添加商品：
                     <span @click="reduceCar({id})">-</span>
@@ -50,6 +50,7 @@ export default {
             id:'',
             name:'',
             img:'',
+            boo:true,
         }
     },
     computed: {
@@ -71,6 +72,7 @@ export default {
                 params:{id:that.$route.params.id,img:that.$route.params.img}
             }).then((res)=>{
              that.goods = res.data
+             console.log(res.data)
              that.id = that.$route.params.id
              that.price = that.$route.params.price
              that.name = that.$route.params.name
@@ -97,25 +99,28 @@ export default {
         this.getGoods()
     },
     updated () {
-       var banner = document.getElementById("bannerContainer")
-       var product = document.getElementsByClassName("product-name")[0]
-       var header = document.getElementsByClassName("header-center")[0]
-       header.innerHTML = product.innerHTML
-       banner.style.marginTop = 4+ 'rem'
-        banner.style.width = 100 + '%'
-       banner.style.height = 100 + '%'
-       var img = document.createElement('img')
-       img.alt = '图片不见了...'
-       img.style.width = 100 + '%'
-       img.style.height = 100 + '%'
-        //console.log(this.$route.params.img)
-        //20171214155319_585613.jpg
-        this.getImg = String(this.$route.params.img)
-        var str = this.getImg.substr(0,3)
-        var tr = this.getImg.substr(3,3)
-        var sr = this.getImg.substr(6,4)
-       img.src = "http://img01.bqstatic.com/upload/goods/"+str+"/"+tr+"/"+sr+"/"+this.$route.params.img+"@500w_500h_90Q"
-       banner.appendChild(img)
+        if(this.boo){
+            var banner = document.getElementById("bannerContainer")
+            var product = document.getElementsByClassName("product-name")[0]
+            var header = document.getElementsByClassName("header-center")[0]
+            header.innerHTML = product.innerHTML
+            banner.style.marginTop = 4+ 'rem'
+                banner.style.width = 100 + '%'
+            banner.style.height = 100 + '%'
+            var img = document.createElement('img')
+            img.alt = '图片不见了...'
+            img.style.width = 100 + '%'
+            img.style.height = 100 + '%'
+                //console.log(this.$route.params.img)
+                //20171214155319_585613.jpg
+                this.getImg = String(this.$route.params.img)
+                var str = this.getImg.substr(0,3)
+                var tr = this.getImg.substr(3,3)
+                var sr = this.getImg.substr(6,4)
+            img.src = "http://img01.bqstatic.com/upload/goods/"+str+"/"+tr+"/"+sr+"/"+this.$route.params.img+"@500w_500h_90Q"
+            banner.appendChild(img)
+            this.boo = false;
+        }
     }
     
 

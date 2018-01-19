@@ -14,16 +14,16 @@
             <table>
               <tr>
                 <td width="28%">收<i class="car-hidden">a</i>货<i class="car-hidden">a</i>人</td>
-                <td>韩伟 先生</td>
+                <td>{{address.person}} 先生</td>
                 <td width="17%" rowspan="3">修改<span class="yo-ico ">&#xf07f;</span></td>
               </tr>
               <tr>
                 <td>电<i class="car-hidden">电话</i>话</td>
-                <td>15835850014</td>
+                <td>{{address.phone}}</td>
               </tr>
               <tr>
                 <td>收货地址</td>
-                <td>北京市回龙观 北京市回龙观地铁站</td>
+                <td>{{address.selected}}{{address.detailaddress}}</td>
               </tr>
             </table>
         </router-link>
@@ -99,10 +99,11 @@ export default {
         isTaday:[],
         select:'30分钟送达',//收货时间
         commentWrapper:'',//备注
+        address:""//收货人及地址
     }
   },
   computed: {
-     ...mapState(['info',"car"]),  
+     ...mapState(['info',"car","infoAddress"]),  
      ...mapGetters(['money']),
      isShowAll:{//全选按钮
       get(){
@@ -166,12 +167,18 @@ export default {
     this.initCar()
     this.initInfo()
     this.nowTime()
-    setTimeout(()=>{
       if(!this.info.length){
         this.$router.push({path:'/my-login'})
       }
-    },400)
   },
+  created(){
+    this.infoAddress.forEach(item => {
+        if(item.isShow){
+          this.address = item;
+        }
+    });
+  }
+
 }
 </script>
 <style>

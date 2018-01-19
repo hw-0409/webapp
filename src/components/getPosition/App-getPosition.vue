@@ -19,12 +19,16 @@
 import PositionAddres from "./position-addres"
 import { Indicator } from 'mint-ui';
 import { Toast } from 'mint-ui';
+
+
+import { mapActions } from 'vuex'
 export default {
     name:'app-position',
     components:{
         PositionAddres
     },
     methods:{
+        ...mapActions(["initAddress"]),
           returngo(){
             this.$router.go(-1)
         },
@@ -42,6 +46,9 @@ export default {
             },1000)
             
         }
+    },
+    created () {
+        this.initAddress()
     }
 }
 </script>

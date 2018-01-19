@@ -85,13 +85,10 @@ export default {
   },
   mounted () {
     this.initInfo()
-    setTimeout(()=>{
       this.user=this.info||''
       if(!this.info.length){
         this.$router.push({path:'/my-login'})
       }
-
-    },400)
   }
 }
 </script>

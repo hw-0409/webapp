@@ -9,7 +9,7 @@
 <script>
 export default {
   name:'app-detail-contant',
-  props:['goods']
+  props:['goods'],
 
 }
 </script>

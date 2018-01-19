@@ -17,6 +17,7 @@
             font-size: .16rem;
             position: absolute;
             left: .6rem;
+            text-align: center;
             @include wrap();
             @include ellipsis();
             }

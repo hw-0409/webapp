@@ -1,29 +1,17 @@
 <template>
 	<div class="app-list-item">
-		<!--<div class="list-box">
-			<div class="img"><img src="http://img01.bqstatic.com/upload/goods/201/712/2301/20171223010644_408158.jpg@200w_200h_90Q"/></div>
-			
-			<div class="detail">
-				<slot name='name' ></slot>
-				<h3><span>精选</span><span>买一赠一</span></h3>
-				<h4>140-180g 2粒/盒</h4>
-				<h5>￥29.9<span>￥39.9</span></h5>
-			</div>
-			
-			<div class="button">
-				<div class="btn dele">-</div>
-				<span>1</span>
-				<div class="btn add">+</div>
-			</div>	
-		</div>-->
 		<div class="title">
 			<slot name="p-img"></slot>
-			
 			<div class="section">
 				<slot name="p-name"></slot>
 				<slot name="jing" ></slot>
 				<slot name="p-intro"></slot>
 				<slot name="p-price"></slot>
+				<div  class="group-item-ope">
+					<slot name="p-reduce"></slot>
+					<slot name="p-num" ></slot>
+					<slot name="p-add"></slot>
+				</div>
 			</div>
 			
 		</div>
@@ -50,19 +38,29 @@
 		height:1.1rem;
 		display: flex;
 		border-bottom: 1px solid #ccc;
-		img{
-			width:0.96rem;
-			height:0.96rem;
+		.img-box{
+			position: relative;
+			img{
+				position: absolute;
+				width:0.96rem;
+				height:0.96rem;		
+			}
 		}
 		.section{
+			padding-left: 0.96rem;
 			display: flex;
 			flex-direction: column;
 			flex: 1;
 			justify-content: space-around;
 			color: #999;
+			position: relative;
+			overflow: hidden;
 			h4{
 				font-size: 14px;
-				color: #000;
+				color: #232b33;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
 			}
 			.jing{
 				font-size: 12px;
@@ -76,8 +74,60 @@
 				color: red;
 				span{
 					color: #999;
+					text-decoration: line-through;
 				}
 			}
+			.group-item-ope {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 1.2rem;
+		.group-item-change {
+			position: absolute;
+			height: 0.6rem;
+			width: 0.6rem;
+			bottom: 0;
+			b {
+				display: inline-block;
+				height: 0.34rem;
+				width: 0.34rem;
+				border: 1px solid red;
+				border-radius: 50%;
+				color: red;
+				font-size: 30px;
+				text-align: center;
+				font-weight: 100;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+		.group-item-reduce {
+			left: 0;
+			b {
+				font-size: 40px;
+				line-height: 0.26rem;
+				background: #fff;
+			}
+		}
+		.group-item-number {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 0.6rem;
+			line-height: 0.6rem;
+			b {
+				font-weight: 100;
+				background: #fff;
+			}
+		}
+		.group-item-add {
+			right: 0;
+			line-height: 0.34rem;
+		}
+	}
 		}
 	}
 

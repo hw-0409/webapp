@@ -5,11 +5,13 @@ const getters = {
         let money = 0;
         state.car.forEach(item => {
             if (item.isShow) {
-                money += item.num * 100 * item.price
+                money +=  Math.floor(item.num * item.price*10)
             }
         })
-        return money /100
+        
+        return money /10
     }
+    
 }
 
  
